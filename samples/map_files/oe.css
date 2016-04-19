@@ -1,0 +1,77 @@
+/* Javascript Object Tree Screener - Stylesheet
+
+Copyright (c) 2007 Denis Petrov www.denispetrov.com
+
+$Id: oe.css,v 1.5 2007/08/31 00:32:48 cvs Exp $
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+div#z_jots_div0, div#z_jots_div1, div#z_jots_div2
+{
+    border: 1px solid black;
+    padding: 5px;
+    margin: 3px;
+}
+
+div#z_jots_objexplorer *
+{
+    font-family: sans-serif;
+    font-size: small;
+    background-color: white;
+    color: black;
+}
+
+div#z_jots_objexplorer a:link
+{
+    color: blue;
+    text-decoration: underline;
+}
+
+div#z_jots_objexplorer a:visited
+{
+    color: navy;
+    text-decoration: underline;
+}
+
+div#z_jots_objexplorer a:hover
+{
+    color: red;
+    text-decoration: none;
+}
+
+div#z_jots_head {
+font-weight: bold;
+}
+
+div#z_jots_divattrib {
+font-size: xx-small;
+margin-left: 3px;
+}
+
+div#z_jots_objexplorer {
+    background-color: white;
+    padding: 2px;
+}
+
+div#z_jots_div1
+{
+    overflow:auto;
+    height:300px;
+}
