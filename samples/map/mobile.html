@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://localhost:8081/?mobile=true#/viewer/leaflet/0?_k=wfj2dl -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MapStore 2 HomePage</title>
+        <link rel="stylesheet" href="./mobile_files/leaflet.css">
+        <link rel="stylesheet" href="./mobile_files/leaflet.draw.css">
+        <link rel="stylesheet" href="./mobile_files/ol.min.css">
+        <link rel="stylesheet" href="./mobile_files/bootstrap.min.css">
+        <script src="./mobile_files/js"></script>
+        <script src="./mobile_files/proj4.js"></script>
+        <script src="./mobile_files/leaflet.js"></script>
+        <script src="./mobile_files/leaflet.draw-src.js"></script>
+        <script src="./mobile_files/ol.min.js"></script>
+        <script src="./mobile_files/pdf.combined.js"></script>
+        <style type="text/css"> #mapstore-mouseposition {
+            z-index: 10;
+            top: -10px;
+            right: 45%;
+            position: absolute;
+            margin: 8px;
+            }
+            #mapstore-mouseposition .label {
+            display: inline-block;
+            max-width: 280px;
+            min-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            vertical-align: middle;
+            }
+            #mapstore-mouseposition .label-info {
+            background-color:rgba(91,192,222,.5);
+            }
+        </style>
+        <style type="text/css">#mappreview-scalebox {
+            position: relative;
+            top: -36px;
+            width: 150px;
+            left: 10px;
+            }
+            .print-error {
+            height: 100px;
+            color: #600;
+            background-color: #E8BABA;
+            border: solid #600 1px;
+            border-radius: 10px;
+            padding: 10px;
+            }
+            .print-error span, .print-warning span {
+            display: inline-block;
+            max-height: 80px;
+            overflow: auto;
+            width: 100%;
+            }
+            .print-warning {
+            height: 50px;
+            color: #660;
+            background-color: #E6E8BA;
+            border: solid #660 1px;
+            border-radius: 10px;
+            padding: 10px;
+            }
+            .print-preview-panel .spinner {
+            display: inline-block;
+            }
+            .print-mappreview-refresh {
+            position: relative;
+            top: -83px;
+            right: -155px;
+            z-index: 1000;
+            }
+            .mapstore-print-panel {
+            width: 850px;
+            position: absolute;
+            top: 50px;
+            right: 60px;
+            zIndex: 100;
+            }
+        </style>
+        <style type="text/css">@-moz-keyframes whirly-loader {
+            0% {
+            -moz-transform: rotate(0deg);
+            transform: rotate(0deg);
+            }
+            100% {
+            -moz-transform: rotate(360deg);
+            transform: rotate(360deg);
+            }
+            }
+            @-webkit-keyframes whirly-loader {
+            0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            }
+            100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+            }
+            }
+            @keyframes whirly-loader {
+            0% {
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            }
+            100% {
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+            }
+            }
+            /* :not(:required) hides this rule from IE9 and below */
+            .whirly-loader:not(:required) {
+            overflow: hidden;
+            position: relative;
+            text-indent: -9999px;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: transparent;
+            -moz-border-radius: 100%;
+            -webkit-border-radius: 100%;
+            border-radius: 100%;
+            -moz-box-shadow: #e66 0px 26px 0 6px, #e66 0.90971px 26.05079px 0 5.93333px, #e66 1.82297px 26.06967px 0 5.86667px, #e66 2.73865px 26.05647px 0 5.8px, #e66 3.65561px 26.01104px 0 5.73333px, #e66 4.57274px 25.93327px 0 5.66667px, #e66 5.48887px 25.8231px 0 5.6px, #e66 6.40287px 25.68049px 0 5.53333px, #e66 7.31358px 25.50548px 0 5.46667px, #e66 8.21985px 25.2981px 0 5.4px, #e66 9.12054px 25.05847px 0 5.33333px, #e66 10.01448px 24.78672px 0 5.26667px, #e66 10.90054px 24.48302px 0 5.2px, #e66 11.77757px 24.1476px 0 5.13333px, #e66 12.64443px 23.78072px 0 5.06667px, #e66 13.5px 23.38269px 0 5px, #e66 14.34315px 22.95384px 0 4.93333px, #e66 15.17277px 22.49455px 0 4.86667px, #e66 15.98776px 22.00526px 0 4.8px, #e66 16.78704px 21.48643px 0 4.73333px, #e66 17.56953px 20.93855px 0 4.66667px, #e66 18.33418px 20.36217px 0 4.6px, #e66 19.07995px 19.75787px 0 4.53333px, #e66 19.80582px 19.12626px 0 4.46667px, #e66 20.5108px 18.468px 0 4.4px, #e66 21.1939px 17.78379px 0 4.33333px, #e66 21.85416px 17.07434px 0 4.26667px, #e66 22.49067px 16.34043px 0 4.2px, #e66 23.10251px 15.58284px 0 4.13333px, #e66 23.68881px 14.80241px 0 4.06667px, #e66 24.24871px 14.0px 0 4px, #e66 24.7814px 13.1765px 0 3.93333px, #e66 25.28607px 12.33284px 0 3.86667px, #e66 25.76198px 11.46997px 0 3.8px, #e66 26.2084px 10.58888px 0 3.73333px, #e66 26.62462px 9.69057px 0 3.66667px, #e66 27.01001px 8.77608px 0 3.6px, #e66 27.36392px 7.84648px 0 3.53333px, #e66 27.68577px 6.90284px 0 3.46667px, #e66 27.97502px 5.94627px 0 3.4px, #e66 28.23116px 4.97791px 0 3.33333px, #e66 28.4537px 3.99891px 0 3.26667px, #e66 28.64223px 3.01042px 0 3.2px, #e66 28.79635px 2.01364px 0 3.13333px, #e66 28.91571px 1.00976px 0 3.06667px, #e66 29px 0.0px 0 3px, #e66 29.04896px -1.01441px 0 2.93333px, #e66 29.06237px -2.03224px 0 2.86667px, #e66 29.04004px -3.05223px 0 2.8px, #e66 28.98185px -4.07313px 0 2.73333px, #e66 28.88769px -5.09368px 0 2.66667px, #e66 28.75754px -6.1126px 0 2.6px, #e66 28.59138px -7.12863px 0 2.53333px, #e66 28.38926px -8.14049px 0 2.46667px, #e66 28.15127px -9.1469px 0 2.4px, #e66 27.87755px -10.1466px 0 2.33333px, #e66 27.56827px -11.1383px 0 2.26667px, #e66 27.22365px -12.12075px 0 2.2px, #e66 26.84398px -13.09268px 0 2.13333px, #e66 26.42956px -14.05285px 0 2.06667px, #e66 25.98076px -15.0px 0 2px, #e66 25.49798px -15.93291px 0 1.93333px, #e66 24.98167px -16.85035px 0 1.86667px, #e66 24.43231px -17.75111px 0 1.8px, #e66 23.85046px -18.63402px 0 1.73333px, #e66 23.23668px -19.49789px 0 1.66667px, #e66 22.5916px -20.34157px 0 1.6px, #e66 21.91589px -21.16393px 0 1.53333px, #e66 21.21024px -21.96384px 0 1.46667px, #e66 20.4754px -22.74023px 0 1.4px, #e66 19.71215px -23.49203px 0 1.33333px, #e66 18.92133px -24.2182px 0 1.26667px, #e66 18.10379px -24.91772px 0 1.2px, #e66 17.26042px -25.58963px 0 1.13333px, #e66 16.39217px -26.23295px 0 1.06667px, #e66 15.5px -26.84679px 0 1px, #e66 14.58492px -27.43024px 0 0.93333px, #e66 13.64796px -27.98245px 0 0.86667px, #e66 12.69018px -28.50262px 0 0.8px, #e66 11.7127px -28.98995px 0 0.73333px, #e66 10.71663px -29.4437px 0 0.66667px, #e66 9.70313px -29.86317px 0 0.6px, #e66 8.67339px -30.2477px 0 0.53333px, #e66 7.6286px -30.59666px 0 0.46667px, #e66 6.57001px -30.90946px 0 0.4px, #e66 5.49886px -31.18558px 0 0.33333px, #e66 4.41643px -31.42451px 0 0.26667px, #e66 3.32401px -31.6258px 0 0.2px, #e66 2.22291px -31.78904px 0 0.13333px, #e66 1.11446px -31.91388px 0 0.06667px, #e66 0.0px -32px 0 0px, #e66 -1.11911px -32.04713px 0 -0.06667px, #e66 -2.24151px -32.05506px 0 -0.13333px, #e66 -3.36582px -32.02361px 0 -0.2px, #e66 -4.49065px -31.95265px 0 -0.26667px, #e66 -5.61462px -31.84212px 0 -0.33333px, #e66 -6.73634px -31.69198px 0 -0.4px, #e66 -7.8544px -31.50227px 0 -0.46667px, #e66 -8.9674px -31.27305px 0 -0.53333px, #e66 -10.07395px -31.00444px 0 -0.6px, #e66 -11.17266px -30.69663px 0 -0.66667px, #e66 -12.26212px -30.34982px 0 -0.73333px, #e66 -13.34096px -29.96429px 0 -0.8px, #e66 -14.4078px -29.54036px 0 -0.86667px, #e66 -15.46126px -29.07841px 0 -0.93333px, #e66 -16.5px -28.57884px 0 -1px, #e66 -17.52266px -28.04212px 0 -1.06667px, #e66 -18.52792px -27.46878px 0 -1.13333px, #e66 -19.51447px -26.85936px 0 -1.2px, #e66 -20.48101px -26.21449px 0 -1.26667px, #e66 -21.42625px -25.53481px 0 -1.33333px, #e66 -22.34896px -24.82104px 0 -1.4px, #e66 -23.2479px -24.07391px 0 -1.46667px, #e66 -24.12186px -23.29421px 0 -1.53333px, #e66 -24.96967px -22.48279px 0 -1.6px, #e66 -25.79016px -21.64052px 0 -1.66667px, #e66 -26.58223px -20.76831px 0 -1.73333px, #e66 -27.34477px -19.86714px 0 -1.8px, #e66 -28.07674px -18.938px 0 -1.86667px, #e66 -28.7771px -17.98193px 0 -1.93333px, #e66 -29.44486px -17.0px 0 -2px, #e66 -30.07908px -15.99333px 0 -2.06667px, #e66 -30.67884px -14.96307px 0 -2.13333px, #e66 -31.24325px -13.91039px 0 -2.2px, #e66 -31.7715px -12.83652px 0 -2.26667px, #e66 -32.26278px -11.74269px 0 -2.33333px, #e66 -32.71634px -10.63018px 0 -2.4px, #e66 -33.13149px -9.5003px 0 -2.46667px, #e66 -33.50755px -8.35437px 0 -2.53333px, #e66 -33.84391px -7.19374px 0 -2.6px, #e66 -34.14px -6.0198px 0 -2.66667px, #e66 -34.39531px -4.83395px 0 -2.73333px, #e66 -34.60936px -3.63759px 0 -2.8px, #e66 -34.78173px -2.43218px 0 -2.86667px, #e66 -34.91205px -1.21916px 0 -2.93333px, #e66 -35px 0.0px 0 -3px, #e66 -35.04531px 1.22381px 0 -3.06667px, #e66 -35.04775px 2.45078px 0 -3.13333px, #e66 -35.00717px 3.6794px 0 -3.2px, #e66 -34.92345px 4.90817px 0 -3.26667px, #e66 -34.79654px 6.13557px 0 -3.33333px, #e66 -34.62643px 7.36007px 0 -3.4px, #e66 -34.41316px 8.58016px 0 -3.46667px, #e66 -34.15683px 9.79431px 0 -3.53333px, #e66 -33.85761px 11.001px 0 -3.6px, #e66 -33.5157px 12.19872px 0 -3.66667px, #e66 -33.13137px 13.38594px 0 -3.73333px, #e66 -32.70493px 14.56117px 0 -3.8px, #e66 -32.23675px 15.72291px 0 -3.86667px, #e66 -31.72725px 16.86968px 0 -3.93333px, #e66 -31.17691px 18px 0 -4px, #e66 -30.58627px 19.11242px 0 -4.06667px, #e66 -29.95589px 20.2055px 0 -4.13333px, #e66 -29.28642px 21.27783px 0 -4.2px, #e66 -28.57852px 22.32799px 0 -4.26667px, #e66 -27.83295px 23.35462px 0 -4.33333px, #e66 -27.05047px 24.35635px 0 -4.4px, #e66 -26.23192px 25.33188px 0 -4.46667px, #e66 -25.37819px 26.27988px 0 -4.53333px, #e66 -24.49018px 27.1991px 0 -4.6px, #e66 -23.56888px 28.0883px 0 -4.66667px, #e66 -22.6153px 28.94626px 0 -4.73333px, #e66 -21.6305px 29.77183px 0 -4.8px, #e66 -20.61558px 30.56385px 0 -4.86667px, #e66 -19.57168px 31.32124px 0 -4.93333px, #e66 -18.5px 32.04294px 0 -5px, #e66 -17.40175px 32.72792px 0 -5.06667px, #e66 -16.27818px 33.37522px 0 -5.13333px, #e66 -15.1306px 33.98389px 0 -5.2px, #e66 -13.96034px 34.55305px 0 -5.26667px, #e66 -12.76875px 35.08186px 0 -5.33333px, #e66 -11.55724px 35.56951px 0 -5.4px, #e66 -10.32721px 36.01527px 0 -5.46667px, #e66 -9.08014px 36.41843px 0 -5.53333px, #e66 -7.81748px 36.77835px 0 -5.6px, #e66 -6.54075px 37.09443px 0 -5.66667px, #e66 -5.25147px 37.36612px 0 -5.73333px, #e66 -3.95118px 37.59293px 0 -5.8px, #e66 -2.64145px 37.77443px 0 -5.86667px, #e66 -1.32385px 37.91023px 0 -5.93333px;
+            -webkit-box-shadow: #e66 0px 26px 0 6px, #e66 0.90971px 26.05079px 0 5.93333px, #e66 1.82297px 26.06967px 0 5.86667px, #e66 2.73865px 26.05647px 0 5.8px, #e66 3.65561px 26.01104px 0 5.73333px, #e66 4.57274px 25.93327px 0 5.66667px, #e66 5.48887px 25.8231px 0 5.6px, #e66 6.40287px 25.68049px 0 5.53333px, #e66 7.31358px 25.50548px 0 5.46667px, #e66 8.21985px 25.2981px 0 5.4px, #e66 9.12054px 25.05847px 0 5.33333px, #e66 10.01448px 24.78672px 0 5.26667px, #e66 10.90054px 24.48302px 0 5.2px, #e66 11.77757px 24.1476px 0 5.13333px, #e66 12.64443px 23.78072px 0 5.06667px, #e66 13.5px 23.38269px 0 5px, #e66 14.34315px 22.95384px 0 4.93333px, #e66 15.17277px 22.49455px 0 4.86667px, #e66 15.98776px 22.00526px 0 4.8px, #e66 16.78704px 21.48643px 0 4.73333px, #e66 17.56953px 20.93855px 0 4.66667px, #e66 18.33418px 20.36217px 0 4.6px, #e66 19.07995px 19.75787px 0 4.53333px, #e66 19.80582px 19.12626px 0 4.46667px, #e66 20.5108px 18.468px 0 4.4px, #e66 21.1939px 17.78379px 0 4.33333px, #e66 21.85416px 17.07434px 0 4.26667px, #e66 22.49067px 16.34043px 0 4.2px, #e66 23.10251px 15.58284px 0 4.13333px, #e66 23.68881px 14.80241px 0 4.06667px, #e66 24.24871px 14.0px 0 4px, #e66 24.7814px 13.1765px 0 3.93333px, #e66 25.28607px 12.33284px 0 3.86667px, #e66 25.76198px 11.46997px 0 3.8px, #e66 26.2084px 10.58888px 0 3.73333px, #e66 26.62462px 9.69057px 0 3.66667px, #e66 27.01001px 8.77608px 0 3.6px, #e66 27.36392px 7.84648px 0 3.53333px, #e66 27.68577px 6.90284px 0 3.46667px, #e66 27.97502px 5.94627px 0 3.4px, #e66 28.23116px 4.97791px 0 3.33333px, #e66 28.4537px 3.99891px 0 3.26667px, #e66 28.64223px 3.01042px 0 3.2px, #e66 28.79635px 2.01364px 0 3.13333px, #e66 28.91571px 1.00976px 0 3.06667px, #e66 29px 0.0px 0 3px, #e66 29.04896px -1.01441px 0 2.93333px, #e66 29.06237px -2.03224px 0 2.86667px, #e66 29.04004px -3.05223px 0 2.8px, #e66 28.98185px -4.07313px 0 2.73333px, #e66 28.88769px -5.09368px 0 2.66667px, #e66 28.75754px -6.1126px 0 2.6px, #e66 28.59138px -7.12863px 0 2.53333px, #e66 28.38926px -8.14049px 0 2.46667px, #e66 28.15127px -9.1469px 0 2.4px, #e66 27.87755px -10.1466px 0 2.33333px, #e66 27.56827px -11.1383px 0 2.26667px, #e66 27.22365px -12.12075px 0 2.2px, #e66 26.84398px -13.09268px 0 2.13333px, #e66 26.42956px -14.05285px 0 2.06667px, #e66 25.98076px -15.0px 0 2px, #e66 25.49798px -15.93291px 0 1.93333px, #e66 24.98167px -16.85035px 0 1.86667px, #e66 24.43231px -17.75111px 0 1.8px, #e66 23.85046px -18.63402px 0 1.73333px, #e66 23.23668px -19.49789px 0 1.66667px, #e66 22.5916px -20.34157px 0 1.6px, #e66 21.91589px -21.16393px 0 1.53333px, #e66 21.21024px -21.96384px 0 1.46667px, #e66 20.4754px -22.74023px 0 1.4px, #e66 19.71215px -23.49203px 0 1.33333px, #e66 18.92133px -24.2182px 0 1.26667px, #e66 18.10379px -24.91772px 0 1.2px, #e66 17.26042px -25.58963px 0 1.13333px, #e66 16.39217px -26.23295px 0 1.06667px, #e66 15.5px -26.84679px 0 1px, #e66 14.58492px -27.43024px 0 0.93333px, #e66 13.64796px -27.98245px 0 0.86667px, #e66 12.69018px -28.50262px 0 0.8px, #e66 11.7127px -28.98995px 0 0.73333px, #e66 10.71663px -29.4437px 0 0.66667px, #e66 9.70313px -29.86317px 0 0.6px, #e66 8.67339px -30.2477px 0 0.53333px, #e66 7.6286px -30.59666px 0 0.46667px, #e66 6.57001px -30.90946px 0 0.4px, #e66 5.49886px -31.18558px 0 0.33333px, #e66 4.41643px -31.42451px 0 0.26667px, #e66 3.32401px -31.6258px 0 0.2px, #e66 2.22291px -31.78904px 0 0.13333px, #e66 1.11446px -31.91388px 0 0.06667px, #e66 0.0px -32px 0 0px, #e66 -1.11911px -32.04713px 0 -0.06667px, #e66 -2.24151px -32.05506px 0 -0.13333px, #e66 -3.36582px -32.02361px 0 -0.2px, #e66 -4.49065px -31.95265px 0 -0.26667px, #e66 -5.61462px -31.84212px 0 -0.33333px, #e66 -6.73634px -31.69198px 0 -0.4px, #e66 -7.8544px -31.50227px 0 -0.46667px, #e66 -8.9674px -31.27305px 0 -0.53333px, #e66 -10.07395px -31.00444px 0 -0.6px, #e66 -11.17266px -30.69663px 0 -0.66667px, #e66 -12.26212px -30.34982px 0 -0.73333px, #e66 -13.34096px -29.96429px 0 -0.8px, #e66 -14.4078px -29.54036px 0 -0.86667px, #e66 -15.46126px -29.07841px 0 -0.93333px, #e66 -16.5px -28.57884px 0 -1px, #e66 -17.52266px -28.04212px 0 -1.06667px, #e66 -18.52792px -27.46878px 0 -1.13333px, #e66 -19.51447px -26.85936px 0 -1.2px, #e66 -20.48101px -26.21449px 0 -1.26667px, #e66 -21.42625px -25.53481px 0 -1.33333px, #e66 -22.34896px -24.82104px 0 -1.4px, #e66 -23.2479px -24.07391px 0 -1.46667px, #e66 -24.12186px -23.29421px 0 -1.53333px, #e66 -24.96967px -22.48279px 0 -1.6px, #e66 -25.79016px -21.64052px 0 -1.66667px, #e66 -26.58223px -20.76831px 0 -1.73333px, #e66 -27.34477px -19.86714px 0 -1.8px, #e66 -28.07674px -18.938px 0 -1.86667px, #e66 -28.7771px -17.98193px 0 -1.93333px, #e66 -29.44486px -17.0px 0 -2px, #e66 -30.07908px -15.99333px 0 -2.06667px, #e66 -30.67884px -14.96307px 0 -2.13333px, #e66 -31.24325px -13.91039px 0 -2.2px, #e66 -31.7715px -12.83652px 0 -2.26667px, #e66 -32.26278px -11.74269px 0 -2.33333px, #e66 -32.71634px -10.63018px 0 -2.4px, #e66 -33.13149px -9.5003px 0 -2.46667px, #e66 -33.50755px -8.35437px 0 -2.53333px, #e66 -33.84391px -7.19374px 0 -2.6px, #e66 -34.14px -6.0198px 0 -2.66667px, #e66 -34.39531px -4.83395px 0 -2.73333px, #e66 -34.60936px -3.63759px 0 -2.8px, #e66 -34.78173px -2.43218px 0 -2.86667px, #e66 -34.91205px -1.21916px 0 -2.93333px, #e66 -35px 0.0px 0 -3px, #e66 -35.04531px 1.22381px 0 -3.06667px, #e66 -35.04775px 2.45078px 0 -3.13333px, #e66 -35.00717px 3.6794px 0 -3.2px, #e66 -34.92345px 4.90817px 0 -3.26667px, #e66 -34.79654px 6.13557px 0 -3.33333px, #e66 -34.62643px 7.36007px 0 -3.4px, #e66 -34.41316px 8.58016px 0 -3.46667px, #e66 -34.15683px 9.79431px 0 -3.53333px, #e66 -33.85761px 11.001px 0 -3.6px, #e66 -33.5157px 12.19872px 0 -3.66667px, #e66 -33.13137px 13.38594px 0 -3.73333px, #e66 -32.70493px 14.56117px 0 -3.8px, #e66 -32.23675px 15.72291px 0 -3.86667px, #e66 -31.72725px 16.86968px 0 -3.93333px, #e66 -31.17691px 18px 0 -4px, #e66 -30.58627px 19.11242px 0 -4.06667px, #e66 -29.95589px 20.2055px 0 -4.13333px, #e66 -29.28642px 21.27783px 0 -4.2px, #e66 -28.57852px 22.32799px 0 -4.26667px, #e66 -27.83295px 23.35462px 0 -4.33333px, #e66 -27.05047px 24.35635px 0 -4.4px, #e66 -26.23192px 25.33188px 0 -4.46667px, #e66 -25.37819px 26.27988px 0 -4.53333px, #e66 -24.49018px 27.1991px 0 -4.6px, #e66 -23.56888px 28.0883px 0 -4.66667px, #e66 -22.6153px 28.94626px 0 -4.73333px, #e66 -21.6305px 29.77183px 0 -4.8px, #e66 -20.61558px 30.56385px 0 -4.86667px, #e66 -19.57168px 31.32124px 0 -4.93333px, #e66 -18.5px 32.04294px 0 -5px, #e66 -17.40175px 32.72792px 0 -5.06667px, #e66 -16.27818px 33.37522px 0 -5.13333px, #e66 -15.1306px 33.98389px 0 -5.2px, #e66 -13.96034px 34.55305px 0 -5.26667px, #e66 -12.76875px 35.08186px 0 -5.33333px, #e66 -11.55724px 35.56951px 0 -5.4px, #e66 -10.32721px 36.01527px 0 -5.46667px, #e66 -9.08014px 36.41843px 0 -5.53333px, #e66 -7.81748px 36.77835px 0 -5.6px, #e66 -6.54075px 37.09443px 0 -5.66667px, #e66 -5.25147px 37.36612px 0 -5.73333px, #e66 -3.95118px 37.59293px 0 -5.8px, #e66 -2.64145px 37.77443px 0 -5.86667px, #e66 -1.32385px 37.91023px 0 -5.93333px;
+            box-shadow: #e66 0px 26px 0 6px, #e66 0.90971px 26.05079px 0 5.93333px, #e66 1.82297px 26.06967px 0 5.86667px, #e66 2.73865px 26.05647px 0 5.8px, #e66 3.65561px 26.01104px 0 5.73333px, #e66 4.57274px 25.93327px 0 5.66667px, #e66 5.48887px 25.8231px 0 5.6px, #e66 6.40287px 25.68049px 0 5.53333px, #e66 7.31358px 25.50548px 0 5.46667px, #e66 8.21985px 25.2981px 0 5.4px, #e66 9.12054px 25.05847px 0 5.33333px, #e66 10.01448px 24.78672px 0 5.26667px, #e66 10.90054px 24.48302px 0 5.2px, #e66 11.77757px 24.1476px 0 5.13333px, #e66 12.64443px 23.78072px 0 5.06667px, #e66 13.5px 23.38269px 0 5px, #e66 14.34315px 22.95384px 0 4.93333px, #e66 15.17277px 22.49455px 0 4.86667px, #e66 15.98776px 22.00526px 0 4.8px, #e66 16.78704px 21.48643px 0 4.73333px, #e66 17.56953px 20.93855px 0 4.66667px, #e66 18.33418px 20.36217px 0 4.6px, #e66 19.07995px 19.75787px 0 4.53333px, #e66 19.80582px 19.12626px 0 4.46667px, #e66 20.5108px 18.468px 0 4.4px, #e66 21.1939px 17.78379px 0 4.33333px, #e66 21.85416px 17.07434px 0 4.26667px, #e66 22.49067px 16.34043px 0 4.2px, #e66 23.10251px 15.58284px 0 4.13333px, #e66 23.68881px 14.80241px 0 4.06667px, #e66 24.24871px 14.0px 0 4px, #e66 24.7814px 13.1765px 0 3.93333px, #e66 25.28607px 12.33284px 0 3.86667px, #e66 25.76198px 11.46997px 0 3.8px, #e66 26.2084px 10.58888px 0 3.73333px, #e66 26.62462px 9.69057px 0 3.66667px, #e66 27.01001px 8.77608px 0 3.6px, #e66 27.36392px 7.84648px 0 3.53333px, #e66 27.68577px 6.90284px 0 3.46667px, #e66 27.97502px 5.94627px 0 3.4px, #e66 28.23116px 4.97791px 0 3.33333px, #e66 28.4537px 3.99891px 0 3.26667px, #e66 28.64223px 3.01042px 0 3.2px, #e66 28.79635px 2.01364px 0 3.13333px, #e66 28.91571px 1.00976px 0 3.06667px, #e66 29px 0.0px 0 3px, #e66 29.04896px -1.01441px 0 2.93333px, #e66 29.06237px -2.03224px 0 2.86667px, #e66 29.04004px -3.05223px 0 2.8px, #e66 28.98185px -4.07313px 0 2.73333px, #e66 28.88769px -5.09368px 0 2.66667px, #e66 28.75754px -6.1126px 0 2.6px, #e66 28.59138px -7.12863px 0 2.53333px, #e66 28.38926px -8.14049px 0 2.46667px, #e66 28.15127px -9.1469px 0 2.4px, #e66 27.87755px -10.1466px 0 2.33333px, #e66 27.56827px -11.1383px 0 2.26667px, #e66 27.22365px -12.12075px 0 2.2px, #e66 26.84398px -13.09268px 0 2.13333px, #e66 26.42956px -14.05285px 0 2.06667px, #e66 25.98076px -15.0px 0 2px, #e66 25.49798px -15.93291px 0 1.93333px, #e66 24.98167px -16.85035px 0 1.86667px, #e66 24.43231px -17.75111px 0 1.8px, #e66 23.85046px -18.63402px 0 1.73333px, #e66 23.23668px -19.49789px 0 1.66667px, #e66 22.5916px -20.34157px 0 1.6px, #e66 21.91589px -21.16393px 0 1.53333px, #e66 21.21024px -21.96384px 0 1.46667px, #e66 20.4754px -22.74023px 0 1.4px, #e66 19.71215px -23.49203px 0 1.33333px, #e66 18.92133px -24.2182px 0 1.26667px, #e66 18.10379px -24.91772px 0 1.2px, #e66 17.26042px -25.58963px 0 1.13333px, #e66 16.39217px -26.23295px 0 1.06667px, #e66 15.5px -26.84679px 0 1px, #e66 14.58492px -27.43024px 0 0.93333px, #e66 13.64796px -27.98245px 0 0.86667px, #e66 12.69018px -28.50262px 0 0.8px, #e66 11.7127px -28.98995px 0 0.73333px, #e66 10.71663px -29.4437px 0 0.66667px, #e66 9.70313px -29.86317px 0 0.6px, #e66 8.67339px -30.2477px 0 0.53333px, #e66 7.6286px -30.59666px 0 0.46667px, #e66 6.57001px -30.90946px 0 0.4px, #e66 5.49886px -31.18558px 0 0.33333px, #e66 4.41643px -31.42451px 0 0.26667px, #e66 3.32401px -31.6258px 0 0.2px, #e66 2.22291px -31.78904px 0 0.13333px, #e66 1.11446px -31.91388px 0 0.06667px, #e66 0.0px -32px 0 0px, #e66 -1.11911px -32.04713px 0 -0.06667px, #e66 -2.24151px -32.05506px 0 -0.13333px, #e66 -3.36582px -32.02361px 0 -0.2px, #e66 -4.49065px -31.95265px 0 -0.26667px, #e66 -5.61462px -31.84212px 0 -0.33333px, #e66 -6.73634px -31.69198px 0 -0.4px, #e66 -7.8544px -31.50227px 0 -0.46667px, #e66 -8.9674px -31.27305px 0 -0.53333px, #e66 -10.07395px -31.00444px 0 -0.6px, #e66 -11.17266px -30.69663px 0 -0.66667px, #e66 -12.26212px -30.34982px 0 -0.73333px, #e66 -13.34096px -29.96429px 0 -0.8px, #e66 -14.4078px -29.54036px 0 -0.86667px, #e66 -15.46126px -29.07841px 0 -0.93333px, #e66 -16.5px -28.57884px 0 -1px, #e66 -17.52266px -28.04212px 0 -1.06667px, #e66 -18.52792px -27.46878px 0 -1.13333px, #e66 -19.51447px -26.85936px 0 -1.2px, #e66 -20.48101px -26.21449px 0 -1.26667px, #e66 -21.42625px -25.53481px 0 -1.33333px, #e66 -22.34896px -24.82104px 0 -1.4px, #e66 -23.2479px -24.07391px 0 -1.46667px, #e66 -24.12186px -23.29421px 0 -1.53333px, #e66 -24.96967px -22.48279px 0 -1.6px, #e66 -25.79016px -21.64052px 0 -1.66667px, #e66 -26.58223px -20.76831px 0 -1.73333px, #e66 -27.34477px -19.86714px 0 -1.8px, #e66 -28.07674px -18.938px 0 -1.86667px, #e66 -28.7771px -17.98193px 0 -1.93333px, #e66 -29.44486px -17.0px 0 -2px, #e66 -30.07908px -15.99333px 0 -2.06667px, #e66 -30.67884px -14.96307px 0 -2.13333px, #e66 -31.24325px -13.91039px 0 -2.2px, #e66 -31.7715px -12.83652px 0 -2.26667px, #e66 -32.26278px -11.74269px 0 -2.33333px, #e66 -32.71634px -10.63018px 0 -2.4px, #e66 -33.13149px -9.5003px 0 -2.46667px, #e66 -33.50755px -8.35437px 0 -2.53333px, #e66 -33.84391px -7.19374px 0 -2.6px, #e66 -34.14px -6.0198px 0 -2.66667px, #e66 -34.39531px -4.83395px 0 -2.73333px, #e66 -34.60936px -3.63759px 0 -2.8px, #e66 -34.78173px -2.43218px 0 -2.86667px, #e66 -34.91205px -1.21916px 0 -2.93333px, #e66 -35px 0.0px 0 -3px, #e66 -35.04531px 1.22381px 0 -3.06667px, #e66 -35.04775px 2.45078px 0 -3.13333px, #e66 -35.00717px 3.6794px 0 -3.2px, #e66 -34.92345px 4.90817px 0 -3.26667px, #e66 -34.79654px 6.13557px 0 -3.33333px, #e66 -34.62643px 7.36007px 0 -3.4px, #e66 -34.41316px 8.58016px 0 -3.46667px, #e66 -34.15683px 9.79431px 0 -3.53333px, #e66 -33.85761px 11.001px 0 -3.6px, #e66 -33.5157px 12.19872px 0 -3.66667px, #e66 -33.13137px 13.38594px 0 -3.73333px, #e66 -32.70493px 14.56117px 0 -3.8px, #e66 -32.23675px 15.72291px 0 -3.86667px, #e66 -31.72725px 16.86968px 0 -3.93333px, #e66 -31.17691px 18px 0 -4px, #e66 -30.58627px 19.11242px 0 -4.06667px, #e66 -29.95589px 20.2055px 0 -4.13333px, #e66 -29.28642px 21.27783px 0 -4.2px, #e66 -28.57852px 22.32799px 0 -4.26667px, #e66 -27.83295px 23.35462px 0 -4.33333px, #e66 -27.05047px 24.35635px 0 -4.4px, #e66 -26.23192px 25.33188px 0 -4.46667px, #e66 -25.37819px 26.27988px 0 -4.53333px, #e66 -24.49018px 27.1991px 0 -4.6px, #e66 -23.56888px 28.0883px 0 -4.66667px, #e66 -22.6153px 28.94626px 0 -4.73333px, #e66 -21.6305px 29.77183px 0 -4.8px, #e66 -20.61558px 30.56385px 0 -4.86667px, #e66 -19.57168px 31.32124px 0 -4.93333px, #e66 -18.5px 32.04294px 0 -5px, #e66 -17.40175px 32.72792px 0 -5.06667px, #e66 -16.27818px 33.37522px 0 -5.13333px, #e66 -15.1306px 33.98389px 0 -5.2px, #e66 -13.96034px 34.55305px 0 -5.26667px, #e66 -12.76875px 35.08186px 0 -5.33333px, #e66 -11.55724px 35.56951px 0 -5.4px, #e66 -10.32721px 36.01527px 0 -5.46667px, #e66 -9.08014px 36.41843px 0 -5.53333px, #e66 -7.81748px 36.77835px 0 -5.6px, #e66 -6.54075px 37.09443px 0 -5.66667px, #e66 -5.25147px 37.36612px 0 -5.73333px, #e66 -3.95118px 37.59293px 0 -5.8px, #e66 -2.64145px 37.77443px 0 -5.86667px, #e66 -1.32385px 37.91023px 0 -5.93333px;
+            -moz-animation: whirly-loader 1.25s infinite linear;
+            -webkit-animation: whirly-loader 1.25s infinite linear;
+            animation: whirly-loader 1.25s infinite linear;
+            -moz-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            }
+            @-moz-keyframes spinner-loader {
+            0% {
+            -moz-transform: rotate(0deg);
+            transform: rotate(0deg);
+            }
+            100% {
+            -moz-transform: rotate(360deg);
+            transform: rotate(360deg);
+            }
+            }
+            @-webkit-keyframes spinner-loader {
+            0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            }
+            100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+            }
+            }
+            @keyframes spinner-loader {
+            0% {
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            }
+            100% {
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+            }
+            }
+            /* :not(:required) hides this rule from IE9 and below */
+            .spinner-loader:not(:required) {
+            -moz-animation: spinner-loader 1500ms infinite linear;
+            -webkit-animation: spinner-loader 1500ms infinite linear;
+            animation: spinner-loader 1500ms infinite linear;
+            -moz-border-radius: 0.5em;
+            -webkit-border-radius: 0.5em;
+            border-radius: 0.5em;
+            -moz-box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;
+            -webkit-box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;
+            box-shadow: rgba(0, 0, 51, 0.3) 1.5em 0 0 0, rgba(0, 0, 51, 0.3) 1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) 0 1.5em 0 0, rgba(0, 0, 51, 0.3) -1.1em 1.1em 0 0, rgba(0, 0, 51, 0.3) -1.5em 0 0 0, rgba(0, 0, 51, 0.3) -1.1em -1.1em 0 0, rgba(0, 0, 51, 0.3) 0 -1.5em 0 0, rgba(0, 0, 51, 0.3) 1.1em -1.1em 0 0;
+            display: inline-block;
+            font-size: 10px;
+            width: 1em;
+            height: 1em;
+            margin: 1.5em;
+            overflow: hidden;
+            text-indent: 100%;
+            }
+            .spinner{
+            float: left;
+            display: table;
+            width: 20px;
+            text-align: center;
+            margin-right: 4px;
+            }
+            .spinner-card{
+            text-align: center;
+            vertical-align: middle;
+            height: 20px;
+            position:relative;
+            top:-7px;
+            }
+            .spinner-fg{
+            position: relative;
+            top: -36px;
+            left: 1px;
+            font-size: 14px;
+            }
+            .sp-small{
+            zoom:0.8;
+            -moz-transform: scale(0.8);
+            }
+            .sp-big{
+            zoom:1.5;
+            -moz-transform: scale(0.5);
+            }
+        </style>
+        <style type="text/css">.mapToolbar {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            marginRight: 5px;
+            marginTop: 5px;
+            zIndex: 1000;
+            }
+        </style>
+        <style type="text/css">html, body, #container, .home {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            }
+            #langSelContainer {
+            margin: 8px;
+            }
+            @media (min-width: 992px) {
+            .mapmanager .panel-collapse.in {
+            margin: 8px;
+            overflow-y: auto;
+            max-height: 640px;
+            }
+            #langSelContainer {
+            right:0px;
+            margin-right: 150px;
+            position: absolute;
+            }
+            }
+            .home {
+            padding: 20px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-clip: border-box;
+            background-color: rgb(249, 249, 249);
+            background-repeat: no-repeat;
+            background-image: url(/distweb/client/product/assets/img/bg.jpg);
+            background-position: 0 -30px;
+            background-origin: padding-box;
+            background-size: cover;
+            }
+            img.mapstore-logo {
+            max-width: 100%;
+            max-height: 200px;
+            }
+            .carousel-caption {
+            text-shadow: black 0px 0px 6px,black 0px 0px 3px;
+            }
+            @keyframes spin {
+            to { transform: rotate(1turn); }
+            }
+            .spinner-loader {
+            position: relative;
+            display: inline-block;
+            width: 5em;
+            height: 5em;
+            margin: 0 .5em;
+            font-size: 12px;
+            text-indent: 999em;
+            overflow: hidden;
+            animation: spin 1s infinite steps(8);
+            font-size: 24px;
+            }
+            .spinner-loader:before,
+            .spinner-loader:after,
+            .spinner-loader > div:before,
+            .spinner-loader > div:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 2.25em; /* (container width - part width)/2  */
+            width: .5em;
+            height: 1.5em;
+            border-radius: .2em;
+            background: #eee;
+            box-shadow: 0 3.5em #eee; /* container height - part height */
+            transform-origin: 50% 2.5em; /* container height / 2 */
+            }
+            .spinner-loader:before {
+            background: #555;
+            }
+            .spinner-loader:after {
+            transform: rotate(-45deg);
+            background: #777;
+            }
+            .spinner-loader > div:before {
+            transform: rotate(-90deg);
+            background: #999;
+            }
+            .spinner-loader > div:after {
+            transform: rotate(-135deg);
+            background: #bbb;
+            }
+        </style>
+        <style type="text/css">html, body, #container, .fill {
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            }
+            .viewer, #map {
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            }
+            .hidden {
+            display: none !important;
+            }
+            .react-draggable .panel-heading {
+            cursor: move;
+            }
+            #mapstore-scalebox {
+            z-index: 10;
+            bottom: 6px;
+            left: -2px;
+            position: absolute;
+            margin: 8px;
+            }
+            #mapstore-globalspinner  {
+            width: 28px;
+            height: 28px;
+            box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+            background: url(/distweb/client/product/assets/img/spinner.gif) no-repeat scroll center center #FFF;
+            background-size: 80px 80px;
+            background-repeat: no-repeat;
+            border-radius: 4px;
+            border: 1px solid #999;
+            z-index: 10;
+            top: 90px;
+            left: 2px;
+            position: absolute;
+            margin: 8px;
+            }
+            #mapstore-zoomtomaxextent {
+            box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            top: 67px;
+            left: 0px;
+            position: absolute;
+            margin-left: 10px;
+            }
+            .btn-xs {
+            font-size: 15px;
+            }
+            .ol-attribution li:first-child{
+            display:none;
+            visibility: hidden;
+            }
+            .leaflet-control-attribution a:first-child{
+            display:none;
+            visibility: hidden;
+            }
+            .Sortable {
+            position: relative;
+            display: block;
+            overflow: visible;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            }
+            .SortableItem {
+            cursor: -webkit-grab; cursor:-moz-grab; cursor: grab;
+            }
+            .SortableItem.is-dragging {
+            cursor: move;
+            position: absolute;
+            z-index: 1688;
+            background-color: rgba(218, 218, 218, 0.8);;
+            border: 1px dashed #8E8E8E;
+            border-radius: 5px;
+            box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.28);
+            }
+            .SortableItem.is-placeholder {
+            border: 1px dashed #8E8E8E;
+            border-radius: 5px;
+            }
+            .SortableItem.is-undraggable {
+            cursor: not-allowed;
+            }
+        </style>
+        <style type="text/css">.mapToolbar .mapstore-tb-helpbadge {
+            display: block;
+            background-color: #777;
+            position: absolute;
+            z-index: 1000;
+            top : -10px;
+            left: -10px;
+            }
+            #helpbadge-zoomToMaxExtent {
+            display: inline;
+            position: absolute;
+            left: 34px;
+            top: 72px;
+            z-index: 100000
+            }
+            #helpbadge-scaleBox {
+            display: inline;
+            position: absolute;
+            left: 116px;
+            bottom: 48px;
+            z-index: 100000
+            }
+            #helpbadge-seachBar {
+            display: inline;
+            position: absolute;
+            left: 46px;
+            top: 10px;
+            z-index: 100000
+            }
+        </style>
+        <style type="text/css">.BackgroundSwitcherComponent .thumbnail {
+            box-shadow: 5px 5px 5px #4C4C4C;
+            }
+            .BackgroundSwitcherComponent .thumbnail:hover {
+            top: -1px;
+            left: -1px;
+            position: relative;
+            box-shadow: 6px 6px 6px #4c4c4c;
+            }
+            .BackgroundSwitcherComponent .thumbnail img {
+            border-radius: 10px;
+            }
+            .BackgroundSwitcherComponent .thumbnail-primary {
+            border-color: #337ab7;
+            background-color:#5bc0de;
+            }
+        </style>
+        <style type="text/css">.MapSearchBar {
+            left: 45px;
+            position: absolute;
+            right: 55px;
+            top: 10px;
+            }
+            .MapSearchBar .input-group-addon{
+            background-color:white;
+            border-top: 1px solid lightgrey;
+            border-bottom: 1px solid lightgrey;
+            }
+            .MapSearchBar .input-group{
+            box-shadow: 2px 2px 4px #A7A7A7;
+            border-radius: 4px;
+            }
+            .searchclear {
+            top:0;
+            bottom:0;
+            height:14px;
+            margin:auto;
+            font-size:14px;
+            cursor:pointer;
+            }
+            .search-result-list{
+            position: absolute;
+            top: 50px;
+            left: 45px;
+            right: 55px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 10px;
+            max-height: 80%;
+            overflow: auto;
+            }
+            .search-result-list .search-result{
+            padding: 15px;
+            border-bottom: 1px solid lightgray;
+            cursor: pointer;
+            }
+            .search-result-list .search-result:hover{
+            background-color: rgba(204,204,204,0.9);
+            }
+            .search-result-list .search-result .icon{
+            height: 100%;
+            margin-right: 5px;
+            display: block;
+            vertical-align: middle;
+            float: left;
+            }
+            .search-result-list .search-result:last-child{
+            border-bottom: none;
+            border-radius: 0 0 10px 10px;
+            }
+            .search-result-list .search-result:first-child{
+            border-radius:10px 10px 0 0;
+            }
+            /* Small devices (tablets, 768px and up) */
+            @media (min-width: 768px ) {
+            .MapSearchBar {
+            width: 500px;
+            right: auto;
+            }
+            .search-result-list{
+            width: 500px;
+            right: auto;
+            }
+            }
+            /* Medium devices (desktops, 992px and up) */
+            @media (min-width: 992px) {
+            .MapSearchBar {
+            width: 500px;
+            right: auto;
+            }
+            .search-result-list{
+            width: 500px;
+            right: auto;
+            }
+            }
+            /* Large devices (large desktops, 1200px and up) */
+            @media (min-width: 1200px) {
+            .MapSearchBar {
+            width: 500px;
+            position:absolute;
+            }
+            .search-result-list{
+            width: 500px;
+            right: auto;
+            }
+            }
+        </style>
+        <style type="text/css"> .snapshot-panel {
+            width: 700px;
+            }
+            .snapshot-panel ul {
+            list-style:none;
+            padding-left:0;
+            }
+        </style>
+        <style type="text/css">
+            /* General Mobile Usability styles */
+            body {
+            font-size: 14px;
+            }
+            input[type=checkbox], input[type=radio] {
+            width: 20px;
+            height: 20px;
+            vertical-align: bottom;
+            }
+            .nav-menu {
+            max-width:300px;
+            }
+            div.nav-menu{
+            background: rgba(255,255,255,.7);
+            left:-300px;
+            }
+            div.nav-menu {
+            -webkit-transform:   translate3d(300px, 0, 0);
+            -moz-transform: 	 translate3d(300px, 0, 0);
+            -ms-transform: 		 translate3d(300px, 0, 0);
+            -o-transform: 		 translate3d(300px, 0, 0);
+            box-shadow: 2px 0px 15px #A7A7A7;
+            }
+            .nav-menu  .navHeader {
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.75);
+            }
+            .nav-menu > .nav-content .navHeader .title{
+            font-size: 16px;
+            position: absolute;
+            margin: 13px;
+            font-weight: bold;
+            }
+            .nav-content  .section {
+            margin-bottom: 2px;
+            background-color: rgba(255, 255, 255, 0.5);
+            }
+            .nav-content  .section .sectionHeader{
+            padding: 5px;
+            cursor: pointer;
+            }
+            .nav-content .section .sectionHeader>.glyphicon{
+            /* Firefox */
+            -moz-transition: all .3s ease;
+            /* WebKit */
+            -webkit-transition: all .3s ease;
+            /* Opera */
+            -o-transition: all .3s ease;
+            /* Standard */
+            transition: all .3s ease;
+            }
+            .nav-content  .section .sectionTitle{
+            padding-left: 10px;
+            }
+            .nav-content  .section .sectionContent{
+            -moz-transition: max-height .3s ease;
+            -webkit-transition: max-height .3s ease;
+            -o-transition: max-height .3s ease;
+            transition: max-height .3s ease;
+            box-shadow: inset 0px 0px 10px rgba(0,0,0,.5);
+            background: rgba(255,255,255,.4);
+            padding: 5px;
+            }
+            /**
+            Navigator sections
+            */
+            /* search bar override */
+            div.MapSearchBar {
+            left: 5px;
+            position: absolute;
+            right: 60px;
+            top: 10px;
+            }
+            div.MapSearchBar input {
+            padding-left:35px;
+            }
+            /* Layer tree */
+            .nav-menu >  div.nav-content .panel-body{
+            padding:0px;
+            }
+            .nav-menu >  div.nav-content .layer-expanded,.nav-menu >  div.nav-content .layer-collapsed{
+            margin: 10px;
+            border-bottom: thin solid #FAFAFA;
+            }
+            .nav-menu >  div.nav-content .group-expanded > div:first-child, .nav-menu >  div.nav-content .group-collapsed > div:first-child {
+            background-color: #C1C1C1 !important;
+            }
+            /* Layer tree animations */
+            .layertree-group-content-enter {
+            opacity: 0.01;
+            }
+            .layertree-group-content-enter.layertree-group-content-enter-active {
+            opacity: 1;
+            transition: opacity 500ms ease-in;
+            }
+            .layertree-group-content-leave {
+            opacity: 1;
+            }
+            .layertree-group-content-leave.layertree-group-content-leave-active {
+            opacity: 0.01;
+            transition: opacity 300ms ease-in;
+            }
+            /** Background switcher **/
+            .nav-content .BackgroundSwitcherComponent {
+            padding-bottom: 20px;
+            padding-top: 20px;
+            }
+            .nav-content .BackgroundSwitcherComponent .thumbnail {
+            border-radius: 50px;
+            margin-bottom: 40px;
+            }
+            .nav-content .BackgroundSwitcherComponent .thumbnail img {
+            border-radius: 50px;
+            height: 90px;
+            width: 90px;
+            }
+            .nav-content .BackgroundSwitcherComponent .thumbnail .caption {
+            font-size: 10px;
+            text-align: center;
+            text-overflow: ellipsis;
+            padding: 0;
+            height: 0;
+            overflow: visible;
+            top: 10px;
+            max-width: 100%;
+            position: relative;
+            }
+            #mapstore-globalspinner{
+            top: 40px;
+            }
+            /* Menu Button */
+            #drawer-menu-button {
+            position: absolute;
+            z-index:2;
+            left: 3px;
+            top: 8px;
+            margin: 5px;
+            width:30px;
+            background: transparent;
+            outline: none;
+            border: transparent;
+            font-size: 14px;
+            }
+            #drawer-menu-button:active{
+            box-shadow: none;
+            }
+            /* Locate Me button */
+            #locateMeButton{
+            position: absolute;
+            right:15px;
+            bottom: 40px;
+            width: 50px;
+            height:50px;
+            font-size: 17px;
+            border-radius: 30px;
+            padding: 10px 16px 7px 16px;
+            background-color: rgba(255, 255, 255, 0.50);
+            box-shadow: 2px 2px 4px #A7A7A7;
+            transition: color 1s ease, background-color 1s ease;
+            }
+            #locateMeButton:active,#locateMeButton:focus{
+            outline: none;
+            }
+            #locateMeButton.btn-primary{
+            background-color:rgba(51,122,183,0.5);
+            }
+            #locateMeButton.btn-info{
+            background-color:rgba(91, 192, 222, 0.5);
+            }
+            #mapstore-mouseposition-mobile {
+            z-index: 1;
+            top: 40px;
+            position: absolute;
+            text-shadow: -1px -1px 1px #fff,
+            1px -1px 1px #fff,
+            -1px  1px 1px #fff,
+            1px  1px 1px #fff;
+            }
+            #mapstore-mouseposition-mobile .label {
+            display: inline-block;
+            max-width: 280px;
+            min-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            vertical-align: middle;
+            }
+            #mapstore-mouseposition-mobile .label-info {
+            background-color:rgba(91,192,222,0);
+            color: black;
+            }
+            .search-result-list{
+            z-index:2 !important;
+            left: 5px !important;
+            right:5px !important;
+            }
+            #mapstore-getfeatureinfo {
+            margin-bottom: 0;
+            }
+            #mapstore-getfeatureinfo > .panel-body{
+            padding: 0;
+            }
+            #mapstore-getfeatureinfo > .panel-body .panel-heading {
+            text-align: center;
+            }
+            #mapstore-getfeatureinfo > .panel-body .panel-body{
+            max-height: 170px;
+            overflow-y: auto;
+            }
+            #home-button {
+            position: absolute;
+            width: 40px !important;
+            height: 40px;
+            top: 8px;
+            right: 10px;
+            border-radius: 20px;
+            }
+        </style>
+        <style type="text/css">/*! Version: 0.45.1
+            Date: 2015-11-08 */
+            /* Compatible with Leaflet 0.7 */
+            .leaflet-touch .leaflet-bar-part-single {
+            -webkit-border-radius: 7px 7px 7px 7px;
+            border-radius: 7px 7px 7px 7px;
+            border-bottom: none;
+            }
+            .leaflet-touch .leaflet-control-locate {
+            box-shadow: none;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+            background-clip: padding-box;
+            }
+            .leaflet-control-locate a {
+            font-size: 1.4em;
+            color: #444;
+            }
+            .leaflet-control-locate.active a {
+            color: #2074B6;
+            }
+            .leaflet-control-locate.active.following a {
+            color: #FC8428;
+            }
+        </style>
+        <style type="text/css">.leaflet-control-minimap {
+            border:solid rgba(255, 255, 255, 1.0) 4px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+            border-radius: 3px;
+            background: #f8f8f9;
+            transition: all .2s;
+            }
+            .leafletbottom.leafletright, .leaflet-control-minimap{
+            position:absolute;
+            bottom:60px;
+            }
+            .leaflet-control-minimap a {
+            background-color: rgba(255, 255, 255, 1.0);
+            background-repeat: no-repeat;
+            z-index: 99999;
+            transition: all .2s;
+            }
+            .leaflet-control-minimap a.minimized-bottomright {
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            border-radius: 0px;
+            bottom: -3px;
+            right: -3px;
+            }
+            .leaflet-control-minimap a.minimized-topleft {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            border-radius: 0px;
+            }
+            .leaflet-control-minimap a.minimized-bottomleft {
+            -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+            border-radius: 0px;
+            }
+            .leaflet-control-minimap a.minimized-topright {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            border-radius: 0px;
+            }
+            .leaflet-control-minimap-toggle-display{
+            background-image: url(/disttoggle.svg);
+            background-size: cover;
+            position: absolute;
+            border-radius: 3px 0px 0px 0px;
+            }
+            .leaflet-oldie .leaflet-control-minimap-toggle-display{
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAH1JREFUOI3t0DEKAjEQheFP8ERWqfUCeg9rL+adbKxkYRFEY7ERhkUhCZb7wyuGYX5ewkIvK6z/ITpjxOHHPtWKrsh4fJEl3GpF29LoI9sHSS6pZjeTnTD0iOayjFevCI7hOKaJZHpObNIsih/b3WiDSzgaS+5lfrY0Wph4A4kFM89VzdVFAAAAAElFTkSuQmCC);
+            }
+            .leaflet-control-minimap-toggle-display-bottomright {
+            bottom: 0;
+            right: 0;
+            }
+            .leaflet-control-minimap-toggle-display-topleft{
+            top: 0;
+            left: 0;
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+            }
+            .leaflet-control-minimap-toggle-display-bottomleft{
+            bottom: 0;
+            left: 0;
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            }
+            .leaflet-control-minimap-toggle-display-topright{
+            top: 0;
+            right: 0;
+            -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+            }
+            /* Old IE */
+            .leaflet-oldie .leaflet-control-minimap {
+            border: 1px solid #999;
+            }
+            .leaflet-oldie .leaflet-control-minimap a {
+            background-color: #fff;
+            }
+            .leaflet-oldie .leaflet-control-minimap a.minimized {
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+            }
+        </style>
+        <script type="text/javascript" charset="UTF-8" src="./mobile_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./mobile_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./mobile_files/stats.js"></script>
+    </head>
+    <body class="">
+        <div id="container">
+            <div class="fill" >
+                <div class="viewer" >
+                    <div id="map"  class="leaflet-container leaflet-fade-anim" tabindex="0" style="cursor: auto;">
+                        <noscript ></noscript>
+                                                                                                                                                                                                                                                                                                <div class="leaflet-map-pane" style="transform: translate3d(-314px, -170px, 0px);">
+                            <div class="leaflet-tile-pane">
+                                <div class="leaflet-layer">
+                                    <div class="leaflet-tile-container leaflet-zoom-animated"></div>
+                                    <div class="leaflet-tile-container leaflet-zoom-animated"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/745.png" style="height: 256px; width: 256px; left: 1204px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/746.png" style="height: 256px; width: 256px; left: 1204px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/745(1).png" style="height: 256px; width: 256px; left: 1460px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/745(2).png" style="height: 256px; width: 256px; left: 948px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/744.png" style="height: 256px; width: 256px; left: 1204px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/746(1).png" style="height: 256px; width: 256px; left: 1460px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/744(1).png" style="height: 256px; width: 256px; left: 1460px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/744(2).png" style="height: 256px; width: 256px; left: 948px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/746(2).png" style="height: 256px; width: 256px; left: 948px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/743.png" style="height: 256px; width: 256px; left: 1204px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/747.png" style="height: 256px; width: 256px; left: 1204px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/745(3).png" style="height: 256px; width: 256px; left: 692px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/745(4).png" style="height: 256px; width: 256px; left: 1716px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/744(3).png" style="height: 256px; width: 256px; left: 692px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/743(1).png" style="height: 256px; width: 256px; left: 948px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/747(1).png" style="height: 256px; width: 256px; left: 1460px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/746(3).png" style="height: 256px; width: 256px; left: 692px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/744(4).png" style="height: 256px; width: 256px; left: 1716px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/743(2).png" style="height: 256px; width: 256px; left: 1460px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/746(4).png" style="height: 256px; width: 256px; left: 1716px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/747(2).png" style="height: 256px; width: 256px; left: 948px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/747(3).png" style="height: 256px; width: 256px; left: 692px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/743(3).png" style="height: 256px; width: 256px; left: 1716px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/747(4).png" style="height: 256px; width: 256px; left: 1716px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/743(4).png" style="height: 256px; width: 256px; left: 692px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/745(5).png" style="height: 256px; width: 256px; left: 1972px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/745(6).png" style="height: 256px; width: 256px; left: 436px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/746(5).png" style="height: 256px; width: 256px; left: 436px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/744(5).png" style="height: 256px; width: 256px; left: 1972px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/744(6).png" style="height: 256px; width: 256px; left: 436px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/746(6).png" style="height: 256px; width: 256px; left: 1972px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/747(5).png" style="height: 256px; width: 256px; left: 1972px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/743(5).png" style="height: 256px; width: 256px; left: 1972px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/747(6).png" style="height: 256px; width: 256px; left: 436px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/743(6).png" style="height: 256px; width: 256px; left: 436px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/745(7).png" style="height: 256px; width: 256px; left: 2228px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/745(8).png" style="height: 256px; width: 256px; left: 180px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/746(7).png" style="height: 256px; width: 256px; left: 2228px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/746(8).png" style="height: 256px; width: 256px; left: 180px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/744(7).png" style="height: 256px; width: 256px; left: 2228px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/744(8).png" style="height: 256px; width: 256px; left: 180px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/743(7).png" style="height: 256px; width: 256px; left: 180px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/747(7).png" style="height: 256px; width: 256px; left: 180px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/743(8).png" style="height: 256px; width: 256px; left: 2228px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/747(8).png" style="height: 256px; width: 256px; left: 2228px; top: 957px;"></div>
+                                </div>
+                                <div class="leaflet-layer" style="opacity: 0.5; z-index: 9;">
+                                    <div class="leaflet-tile-container leaflet-zoom-animated"></div>
+                                    <div class="leaflet-tile-container leaflet-zoom-animated"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms" style="height: 256px; width: 256px; left: 1204px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(1)" style="height: 256px; width: 256px; left: 1204px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(2)" style="height: 256px; width: 256px; left: 1460px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(3)" style="height: 256px; width: 256px; left: 948px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(4)" style="height: 256px; width: 256px; left: 1204px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(5)" style="height: 256px; width: 256px; left: 1460px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(6)" style="height: 256px; width: 256px; left: 1460px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(7)" style="height: 256px; width: 256px; left: 948px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(8)" style="height: 256px; width: 256px; left: 948px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(9)" style="height: 256px; width: 256px; left: 1204px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(10)" style="height: 256px; width: 256px; left: 1204px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(11)" style="height: 256px; width: 256px; left: 692px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(12)" style="height: 256px; width: 256px; left: 1716px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(13)" style="height: 256px; width: 256px; left: 692px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(14)" style="height: 256px; width: 256px; left: 948px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(15)" style="height: 256px; width: 256px; left: 1460px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(16)" style="height: 256px; width: 256px; left: 692px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(17)" style="height: 256px; width: 256px; left: 1716px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(18)" style="height: 256px; width: 256px; left: 1460px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(19)" style="height: 256px; width: 256px; left: 1716px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(20)" style="height: 256px; width: 256px; left: 948px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(21)" style="height: 256px; width: 256px; left: 692px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(22)" style="height: 256px; width: 256px; left: 1716px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(23)" style="height: 256px; width: 256px; left: 1716px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(24)" style="height: 256px; width: 256px; left: 692px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(25)" style="height: 256px; width: 256px; left: 1972px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(26)" style="height: 256px; width: 256px; left: 436px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(27)" style="height: 256px; width: 256px; left: 436px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(28)" style="height: 256px; width: 256px; left: 1972px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(29)" style="height: 256px; width: 256px; left: 436px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(30)" style="height: 256px; width: 256px; left: 1972px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(31)" style="height: 256px; width: 256px; left: 1972px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(32)" style="height: 256px; width: 256px; left: 1972px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(33)" style="height: 256px; width: 256px; left: 436px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(34)" style="height: 256px; width: 256px; left: 436px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(35)" style="height: 256px; width: 256px; left: 2228px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(36)" style="height: 256px; width: 256px; left: 180px; top: 445px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(37)" style="height: 256px; width: 256px; left: 2228px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(38)" style="height: 256px; width: 256px; left: 180px; top: 701px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(39)" style="height: 256px; width: 256px; left: 2228px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(40)" style="height: 256px; width: 256px; left: 180px; top: 189px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(41)" style="height: 256px; width: 256px; left: 180px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(42)" style="height: 256px; width: 256px; left: 180px; top: 957px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(43)" style="height: 256px; width: 256px; left: 2228px; top: -67px;"><img class="leaflet-tile leaflet-tile-loaded" src="./mobile_files/wms(44)" style="height: 256px; width: 256px; left: 2228px; top: 957px;"></div>
+                                </div>
+                            </div>
+                            <div class="leaflet-objects-pane">
+                                <div class="leaflet-shadow-pane"></div>
+                                <div class="leaflet-overlay-pane">
+                                    <svg class="leaflet-zoom-animated" width="2000" height="973" viewBox="274 151 2000 973" style="transform: translate3d(274px, 151px, 0px);"></svg>
+                                </div>
+                                <div class="leaflet-marker-pane"></div>
+                                <div class="leaflet-popup-pane"></div>
+                            </div>
+                        </div>
+                        <div class="leaflet-control-container">
+                            <div class="leaflet-top leaflet-left"></div>
+                            <div class="leaflet-top leaflet-right"></div>
+                            <div class="leaflet-bottom leaflet-left"></div>
+                            <div class="leaflet-bottom leaflet-right">
+                                <div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | © <a href="http://osm.org/copyright">OpenStreetMap</a> contributors</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="MapSearchBar" >
+                        <div class="form-group" >
+                            <div class="input-group" ><input placeholder="Search by location name or coordinates ..." type="text" style="text-overflow:ellipsis;" value="" class="form-control" ><span class="input-group-addon" ><span class="glyphicon glyphicon-search" ></span></span></div>
+                        </div>
+                    </div>
+                                        <div style="position: absolute; top: 0px; left: 0px; right: auto; bottom: 0px; overflow: visible; width: 0px;" >
+                        <div class="nav-menu" style="z-index: 1022; position: absolute; top: 0px; bottom: 0px; transition: -webkit-transform 0.3s ease-out; will-change: transform; overflow-y: auto; width: 300px; left: 0px; transform: translateX(-100%); box-shadow: rgba(0, 0, 0, 0.14902) 2px 2px 4px;" >
+                            <div class="nav-content" >
+                                <div class="navHeader" style="width:100%;min-height:35px;" ><span class="title" ><span >Menu</span></span><span style="position:absolute;right:0px;padding:15px;cursor:pointer;" class="glyphicon glyphicon-remove" ></span></div>
+                                <div class="section" >
+                                    <div class="sectionHeader" style="width:100%;" ><span style="transform: rotate(90deg);" class="glyphicon glyphicon-triangle-right" ></span><span class="undefined sectionTitle" ><span >Layers</span></span></div>
+                                    <div class="sectionContent" style="max-height: 93px; overflow: auto;" >
+                                        <div >
+                                            <div id="mapstore-layers" >
+                                                <div class="group-expanded" style="style:[object Object];" >
+                                                    <div style="background:rgb(240,240,240);padding:4px;border-radius:4px;" ><span style="margin-right:8px;" class="glyphicon glyphicon-folder-open" ></span><span >Meteo</span></div>
+                                                    <div style="margin-left:15px;" >
+                                                        <div class="layer-collapsed" ><input style="margin-right:2px;" type="checkbox" checked="" ><span >Weather data</span><img src="data:image/gif;base64,R0lGODlhEAALAPQAAP///zMzM+Hh4dnZ2e7u7jc3NzMzM1dXV5qamn9/f8fHx05OTm5ubqGhoYKCgsrKylFRUTY2NnFxcerq6t/f3/b29l9fX+Li4vT09MTExLKystTU1PHx8QAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCwAAACwAAAAAEAALAAAFLSAgjmRpnqSgCuLKAq5AEIM4zDVw03ve27ifDgfkEYe04kDIDC5zrtYKRa2WQgAh+QQJCwAAACwAAAAAEAALAAAFJGBhGAVgnqhpHIeRvsDawqns0qeN5+y967tYLyicBYE7EYkYAgAh+QQJCwAAACwAAAAAEAALAAAFNiAgjothLOOIJAkiGgxjpGKiKMkbz7SN6zIawJcDwIK9W/HISxGBzdHTuBNOmcJVCyoUlk7CEAAh+QQJCwAAACwAAAAAEAALAAAFNSAgjqQIRRFUAo3jNGIkSdHqPI8Tz3V55zuaDacDyIQ+YrBH+hWPzJFzOQQaeavWi7oqnVIhACH5BAkLAAAALAAAAAAQAAsAAAUyICCOZGme1rJY5kRRk7hI0mJSVUXJtF3iOl7tltsBZsNfUegjAY3I5sgFY55KqdX1GgIAIfkECQsAAAAsAAAAABAACwAABTcgII5kaZ4kcV2EqLJipmnZhWGXaOOitm2aXQ4g7P2Ct2ER4AMul00kj5g0Al8tADY2y6C+4FIIACH5BAkLAAAALAAAAAAQAAsAAAUvICCOZGme5ERRk6iy7qpyHCVStA3gNa/7txxwlwv2isSacYUc+l4tADQGQ1mvpBAAIfkECQsAAAAsAAAAABAACwAABS8gII5kaZ7kRFGTqLLuqnIcJVK0DeA1r/u3HHCXC/aKxJpxhRz6Xi0ANAZDWa+kEAA7AAAAAAAAAAAA" style="display: none; margin: 4px; padding: 0px; border: 0px; background: transparent;" alt="..." ></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section" >
+                                    <div class="sectionHeader" style="width:100%;" ><span class="glyphicon glyphicon-triangle-right" ></span><span class="undefined sectionTitle" ><span >Background</span></span></div>
+                                    <div class="sectionContent" style="max-height: 0px; overflow: hidden; padding: 0px;" >
+                                        <div class="BackgroundSwitcherComponent container-fluid" >
+                                            <div class="col-md-6 col-sm-6 col-xs-6" >
+                                                <div data-position="0" src="/distweb/client/components/TOC/background/images/mapthumbs/mapnik.jpg" alt="osm mapnik" class="thumbnail thumbnail-primary" >
+                                                    <img src="./mobile_files/mapnik.jpg" alt="osm mapnik" >
+                                                    <div class="caption" >
+                                                        <div style="height:38px;text-overflow:ellipsis;overflow:hidden;" ><strong >Open Street Map</strong></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" >
+                                                <div data-position="1" src="/distweb/client/components/TOC/background/images/mapthumbs/HYBRID.jpg" alt="google HYBRID" class="thumbnail thumbnail-default" >
+                                                    <img src="./mobile_files/HYBRID.jpg" alt="google HYBRID" >
+                                                    <div class="caption" >
+                                                        <div style="height:38px;text-overflow:ellipsis;overflow:hidden;" ><strong >Google HYBRID</strong></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" >
+                                                <div data-position="2" src="/distweb/client/components/TOC/background/images/mapthumbs/mapquest-osm.jpg" alt="mapquest osm" class="thumbnail thumbnail-default" >
+                                                    <img src="./mobile_files/mapquest-osm.jpg" alt="mapquest osm" >
+                                                    <div class="caption" >
+                                                        <div style="height:38px;text-overflow:ellipsis;overflow:hidden;" ><strong >MapQuest OSM</strong></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" >
+                                                <div data-position="3" src="/distweb/client/components/TOC/background/images/mapthumbs/Aerial.jpg" alt="bing Aerial" class="thumbnail thumbnail-default" >
+                                                    <img src="./mobile_files/Aerial.jpg" alt="bing Aerial" >
+                                                    <div class="caption" >
+                                                        <div style="height:38px;text-overflow:ellipsis;overflow:hidden;" ><strong >Bing Aerial</strong></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" >
+                                                <div data-position="4" src="/distweb/client/components/TOC/background/images/mapthumbs/NASA_NIGHT.jpg" alt="nasagibs Night2012" class="thumbnail thumbnail-default" >
+                                                    <img src="./mobile_files/NASA_NIGHT.jpg" alt="nasagibs Night2012" >
+                                                    <div class="caption" >
+                                                        <div style="height:38px;text-overflow:ellipsis;overflow:hidden;" ><strong >NASAGIBS Night 2012</strong></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" >
+                                                <div data-position="5" src="/distweb/client/components/TOC/background/images/mapthumbs/dafault.jpg" alt="undefined rv1" class="thumbnail thumbnail-default" >
+                                                    <img src="./mobile_files/dafault.jpg" alt="undefined rv1" >
+                                                    <div class="caption" >
+                                                        <div style="height:38px;text-overflow:ellipsis;overflow:hidden;" ><strong >e-Geos Ortofoto RealVista 1.0</strong></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" >
+                                                <div data-position="6" src="/distweb/client/components/TOC/background/images/mapthumbs/dafault.jpg" alt="undefined sde:NE2_HR_LC_SR_W_DR" class="thumbnail thumbnail-default" >
+                                                    <img src="./mobile_files/dafault.jpg" alt="undefined sde:NE2_HR_LC_SR_W_DR" >
+                                                    <div class="caption" >
+                                                        <div style="height:38px;text-overflow:ellipsis;overflow:hidden;" ><strong >Natural Earth</strong></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" >
+                                                <div data-position="7" src="/distweb/client/components/TOC/background/images/mapthumbs/dafault.jpg" alt="undefined sde:HYP_HR_SR_OB_DR" class="thumbnail thumbnail-default" >
+                                                    <img src="./mobile_files/dafault.jpg" alt="undefined sde:HYP_HR_SR_OB_DR" >
+                                                    <div class="caption" >
+                                                        <div style="height:38px;text-overflow:ellipsis;overflow:hidden;" ><strong >Hypsometric</strong></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-6 col-xs-6" >
+                                                <div data-position="8" src="/distweb/client/components/TOC/background/images/mapthumbs/dafault.jpg" alt="undefined sde:GRAY_HR_SR_OB_DR" class="thumbnail thumbnail-default" >
+                                                    <img src="./mobile_files/dafault.jpg" alt="undefined sde:GRAY_HR_SR_OB_DR" >
+                                                    <div class="caption" >
+                                                        <div style="height:38px;text-overflow:ellipsis;overflow:hidden;" ><strong >Gray Earth</strong></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section" >
+                                    <div class="sectionHeader" style="width:100%;" ><span class="glyphicon glyphicon-triangle-right" ></span><span class="undefined sectionTitle" ><span >Settings</span></span></div>
+                                    <div class="sectionContent" style="max-height:0px;overflow:hidden;padding:0px;" >
+                                        <div >
+                                            <h5 ><span >Language</span></h5>
+                                            <div id="mapstore-langselector" type="select" class="btn-group btn-group-sm" ><button aria-describedby="flag-button.it-IT" type="button" class="btn btn-default" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE2SURBVHjaYmSYyMDwgwEE/jEw/GF4mvT0HyqQUlX9B5aEIIAAYmH4wlDtWg1SDwT//0lKSv7/D+T9/w+nYmL+//79/88fIPll0yaAAGJhYAGJP/n69O+/v0CAUAcHt2////ULqJpRVhZoA0AAsQCtAZoMVP0HiP7+RlcNBEDVYA0Mv38DNQAEEMj8vwx//wCt/AdC/zEBkgagYoAAYgF6FGj277+///wlpAEoz8AAEEAgDX/BZv/69wuoB48GRrCTAAKICajh9//fv/6CVP/++wu7BrDxQFf/YWAACCCwk0BKf0MQdg1/gBqAPv0L9ANAALEAY+33vz+S3JIgb/z5C45CBkZGRgY4UFICKQUjoJMAAoiRoZSB4RMojkHx/YPhbNVZoM3AOISQQPUK9vaQOIYAgAADAC5Wd4RRwnKfAAAAAElFTkSuQmCC" alt="Italiano" ></button><button aria-describedby="flag-button.en-US" type="button" class="active btn btn-default" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAYAAAB24g05AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3woNChAfXTteVAAAAjRJREFUKM9VkklIlVEAhb9fHxkVDWLwQKw2URI0kQ2GmoYELcJFhFZQ+FBxHaRhIA20qKiWrzDSoAwMGsgicEIlizILi+ZNIERJhNp777/3/ve0sEV9q7M78J0TJBqGxb94D94BBhBguLK8B6V+M/njGwbwgJ23hLHSBCQahuV9pOsDTlZGHX1O1lq19TqFYUbJx07GhArDUJlMWul0SnZ0RD4KlXw0riDRMKyymq10DnoiD5EH40Sk2ZxxYpQW+PkLxbLxW7cwp7aWa13jnE++IAss8nC3SYQe7jdZIkH30RQZJ94GkGptxTXWk336FO/KqqjYfYs376fIGEOQqBtUaU0x1/o8kZ9tdhZCibeELHVPmWheSxCP/6dKgtcfvxPDp9hfItp6xIOmDJWn5tLdNEX8jGGy6jPzkx246glkDN5avDEQRcRW59P7EWIg2gcCnIPy0zl4J9ZczDB+dDGL9h3Hh5bsZyN/Fwnw3iOEBDs+TcLXr19krVUqldLMzIzS09MKW5olSX7jJtl1GzRLpImKcvVf7lY8/4r2Hr6jhSuOKCu//RLZY0/IuXCBWOcNwmSSRLhn9hJhiIwBie07Osnr7aMo+MarykHWFi1HkSXrS3U9bv02THwBoysrOPF7M7kLIiQICvMJCuNIomBVLgcP3WaosISlbW00Pm+l7kAxQX/HTX3oGqKrYBsvhwzWpXFRxMi9ah5WViHn2NXbTdHOs+Aj8BF5y5Zw7FwNAyev8gcAFF3B0hKD4gAAAABJRU5ErkJggg==" alt="English" ></button></div>
+                                            <div class="form-group form-group-sm" >
+                                                <label for="mapstore-crsselector" class="control-label" ><span >Coordinates indicator</span></label>
+                                                <div class="input-group-sm input-group" >
+                                                    <span class="input-group-btn" ><button style="width:100%;" type="button" class="btn btn-primary" ><span class="glyphicon glyphicon-eye-open" ></span><span >Enable</span></button></span>
+                                                    <select id="mapstore-crsselector" type="select" label="[object Object]" class="form-control" >
+                                                        <option selected="" value="EPSG:4326" >EPSG:4326</option>
+                                                        <option value="EPSG:4269" >EPSG:4269</option>
+                                                        <option value="EPSG:3857" >EPSG:3857</option>
+                                                        <option value="WGS84" >WGS84</option>
+                                                        <option value="EPSG:3785" >EPSG:3785</option>
+                                                        <option value="GOOGLE" >GOOGLE</option>
+                                                        <option value="EPSG:900913" >EPSG:900913</option>
+                                                        <option value="EPSG:102113" >EPSG:102113</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section" >
+                                    <div class="sectionHeader" style="width:100%;" ><span class="undefined sectionTitle" ><span >About</span></span></div>
+                                                                    </div>
+                            </div>
+                        </div>
+                        <div style="z-index: 1021; position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; opacity: 0; visibility: hidden; transition: opacity 0.3s ease-out; background-color: rgba(0, 0, 0, 0.298039);" ></div>
+                        <div style="position:absolute;top:0;left:0;right:0;bottom:0;overflow:auto;transition:left .3s ease-out, right .3s ease-out;" >
+                            <div ></div>
+                        </div>
+                    </div>
+                    <button id="drawer-menu-button" type="button" class="btn btn-default" ><span class="glyphicon glyphicon-menu-hamburger" ></span></button><button id="home-button" style="width:100%;" aria-describedby="toolbar-home-button" type="button" class="btn btn-default" ><span class="glyphicon glyphicon-home" ></span></button><button id="locateMeButton" style="width:auto;" aria-describedby="locate-tooltip" type="button" class="btn btn-default" ><span class="glyphicon glyphicon-screenshot" ></span></button>
+                    <div id="mapstore-mouseposition-mobile" >
+                        <h5 ><span class="label label-lg label-info" ><span >Lat: </span><span >44</span><span >° </span><span >52</span><span >' </span><span >58.38</span><span >'' Lng: </span><span >010</span><span >° </span><span >15</span><span >' </span><span >36.16</span><span >''</span></span></h5>
+                    </div>
+                                    </div>
+                            </div>
+        </div>
+    </body>
+</html>
