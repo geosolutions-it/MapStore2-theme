@@ -1,0 +1,39 @@
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+
+.bar{
+	background-color:#078AA3;
+	color:#ffffff;
+	padding:15px;
+	font-weight:bold;
+	width:288px;
+}
+
+.option-icon{
+	font-size: 32px;
+	margin-right:15px;
+	margin-top:-2px;
+	color:#078AA3;
+	
+}
+
+.margin-left-15{
+	margin-left:15px;
+	margin-top:15px;
+	
+}
+
+.absolute-map{
+	position:absolute;
+	right:0;
+	bottom:5px;
+}
+
+@media (min-width: 768px) {
+	
+.search-wrap{
+	width:400px;
+	height:56px;
+	background-color:red;
+}
+
+}
