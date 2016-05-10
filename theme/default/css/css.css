@@ -4,9 +4,10 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-body {
+html,body {
   margin: 0;
-  background-image:url(map.jpg);
+  	height:100%;
+	width:100%;
 }
 article,
 aside,
@@ -1992,10 +1993,9 @@ select[multiple].input-lg {
   vertical-align: middle;
   cursor: pointer;
   background-image: none;
-  border: 1px solid transparent;
   white-space: nowrap;
   padding: 0 12px;
-  font-size: 14px;
+  font-size: 28px;
   line-height: 1.428571429;
   border-radius: 0;
   -webkit-user-select: none;
@@ -2003,9 +2003,13 @@ select[multiple].input-lg {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+  transition: all 0.2s ease-in;
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
 }
 .shadow{
--webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+   -webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
 -moz-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
 box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
 }
@@ -2039,9 +2043,7 @@ fieldset[disabled] .btn {
 .btn-default {
   color: #078aa3;
   background-color: #ffffff;
-  height:56px;
-  width:56px;
-  border:1px solid #ffffff;
+  border:none;
 
 }
 .btn-default:hover,
@@ -2072,7 +2074,7 @@ fieldset[disabled] .btn-default:active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
   background-color: #078aa3;
-  border-color: #cfcfcf;
+  border-color: none;
 }
 .btn-default .badge {
   color: #078aa3;
@@ -2081,7 +2083,11 @@ fieldset[disabled] .btn-default.active {
 .btn-primary {
   color: #ffffff;
   background-color: #078aa3;
-  border-color: #5c9fb4;
+  border:none;
+}
+
+.btn-primary:hover {
+  border: none;
 }
 
 .btn-primary:hover,
@@ -2091,7 +2097,6 @@ fieldset[disabled] .btn-default.active {
 .open .dropdown-toggle.btn-primary {
   color: #ffffff;
     background-color:#5C9FB4;
-  border-color: #427e90;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -2164,10 +2169,8 @@ fieldset[disabled] .btn-success.active {
 .btn-info {
   color: #ffffff;
   background-color: #078AA3;
-  border-color:;
-  padding:15px;
-  margin:-5px 15px 15px 15px;
-  float:right;
+  border-color:#5c9fb4;
+
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -2176,7 +2179,7 @@ fieldset[disabled] .btn-success.active {
 .open .dropdown-toggle.btn-info {
   color: #ffffff;
   background-color: #5C9FB4;
-  border-color:;
+  border-color:#5c9fb4;
 }
 .btn-info:active,
 .btn-info.active,
@@ -2322,22 +2325,18 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-lg,
 .btn-group-lg > .btn {
-  padding: 13px 0;
+  padding: 15px;
   font-size: 38px;
   line-height: 1.33;
   border-radius: 0;
-    height:56px;
-  width:56px;
 }
 
 .btn-md,
 .btn-group-md > .btn {
   padding: 5px 5px;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1.33;
   border-radius: 0;
-  height:40px;
-  width:40px;
 }
 
 .btn-sm,
@@ -2349,10 +2348,10 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-xs,
 .btn-group-xs > .btn {
-  padding: 1px 5px;
+  padding: 5px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: ;
+  border-radius: 0;
 }
 .btn-block {
   display: block;
@@ -3017,6 +3016,7 @@ input[type="button"].btn-block {
 }
 .dropdown {
   position: relative;
+
 }
 .dropdown-toggle:focus {
   outline: 0;
@@ -3034,13 +3034,12 @@ input[type="button"].btn-block {
   list-style: none;
   font-size: 14px;
   background-color: #ffffff;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
 }
+
 .dropdown-menu.pull-right {
   right: 0;
   left: auto;
@@ -3063,7 +3062,6 @@ input[type="button"].btn-block {
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #078aa3;
   background-color: #f2f2f2;
 }
 .dropdown-menu > .active > a,
@@ -3464,6 +3462,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li {
   position: relative;
   display: block;
+  float: left;
+  background-color:#ffffff;
 }
 .nav > li > a {
   position: relative;
@@ -3663,6 +3663,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
 }
+.navbar-header {
+    float: left;
+  }
+  
 .navbar-collapse {
   max-height: 340px;
   overflow-x: visible;
@@ -3790,27 +3794,26 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     display: none;
   }
 }
+
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .navbar-nav > li > a {
   padding-top: 0;
-  padding-bottom: 10px;
   line-height: 20px;
 }
 @media (max-width: 767px) {
-  .navbar-nav .open .dropdown-menu {
-    position: static;
-    float: none;
-    width: auto;
-    margin-top: 0;
-    background-color: transparent;
-    border: 0;
-    box-shadow: none;
+  .navbar-nav .open .dropdown-menu { /* formattare dropdown nel piccolo */
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
   }
   .navbar-nav .open .dropdown-menu > li > a,
   .navbar-nav .open .dropdown-menu .dropdown-header {
-    padding: 5px 15px 5px 25px;
   }
   .navbar-nav .open .dropdown-menu > li > a {
     line-height: 20px;
@@ -4000,12 +4003,17 @@ box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #e7e7e7;
+  background-color: green;
   color: #555555;
 }
+
 @media (max-width: 767px) {
+.dropdown li .dropdown-menu.open{
+	background-color:red;
+}
+	
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #777777;
+    color:;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -4024,6 +4032,14 @@ box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
     color: #cccccc;
     background-color: transparent;
   }
+  
+  .navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #555555;
+  width:56px;
+  right:0px;
+}
 }
 .navbar-default .navbar-link {
   color: #777777;
@@ -5063,17 +5079,18 @@ a.list-group-item-danger.active:focus {
 }
 .close {
   float: right;
-  font-size: 21px;
-  font-weight: bold;
-  line-height: 1;
-  color: #000000;
-  text-shadow: 0 1px 0 #ffffff;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
+  font-size: 30px;
+  color: #ffffff;
+  right:0;
+  margin-top:15px;
+      transition: all 0.2s ease-in;
+  -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
 }
+
 .close:hover,
 .close:focus {
-  color: #000000;
   text-decoration: none;
   cursor: pointer;
   opacity: 0.5;
@@ -5089,6 +5106,7 @@ button.close {
 .modal-open {
   overflow: hidden;
 }
+
 .modal {
   display: none;
   overflow: auto;
@@ -5120,12 +5138,11 @@ button.close {
   position: relative;
   width: auto;
   margin: 10px;
+  margin:auto;
 }
 .modal-content {
   position: relative;
   background-color: #ffffff;
-  border: 1px solid #999999;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
@@ -5150,12 +5167,13 @@ button.close {
   filter: alpha(opacity=50);
 }
 .modal-header {
-  padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
-  min-height: 16.428571429px;
+ background-color:#078AA3;
+	color:#ffffff;
+	padding:15px;
+	font-weight:bold;
 }
 .modal-header .close {
-  margin-top: -2px;
+  margin-top: 0px;
 }
 .modal-title {
   margin: 0;
@@ -5181,14 +5199,21 @@ button.close {
 .modal-footer .btn-block + .btn-block {
   margin-left: 0;
 }
+
+.modal-dialog {
+    width: 288px;
+}
+  
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
-    margin: 30px auto;
+    width: 288px;
+    margin: auto;
+	margin-top: 150px;
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	width:288px;
   }
   .modal-sm {
     width: 300px;

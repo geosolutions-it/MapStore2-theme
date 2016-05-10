@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: "untitled-font-4";
-  src:url("../fonts/untitled-font-4.eot");
-  src:url("../fonts/untitled-font-4.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/untitled-font-4.woff") format("woff"),
-    url("../fonts/untitled-font-4.ttf") format("truetype"),
-    url("../fonts/untitled-font-4.svg#untitled-font-4") format("svg");
+  src:url("../fonts//untitled-font-4.eot");
+  src:url("../fonts//untitled-font-4.eot?#iefix") format("embedded-opentype"),
+    url("../fonts//untitled-font-4.woff") format("woff"),
+    url("../fonts//untitled-font-4.ttf") format("truetype"),
+    url("../fonts//untitled-font-4.svg#untitled-font-4") format("svg");
   font-weight: normal;
   font-style: normal;
 
@@ -44,9 +44,6 @@
 .icon-arrow:before {
   content: "\62";
 }
-.icon-close:before {
-  content: "\63";
-}
 .icon-draw:before {
   content: "\64";
 }
@@ -68,9 +65,6 @@
 .icon-search:before {
   content: "\6a";
 }
-.icon-work:before {
-  content: "\6b";
-}
 .icon-help:before {
   content: "\6c";
 }
@@ -80,14 +74,8 @@
 .icon-options:before {
   content: "\6e";
 }
-.icon-pdf:before {
-  content: "\6f";
-}
 .icon-print:before {
   content: "\70";
-}
-.icon-screen:before {
-  content: "\71";
 }
 .icon-share:before {
   content: "\72";
@@ -115,4 +103,61 @@
 }
 .icon-all:before {
   content: "\7a";
+}
+.icon-work:before {
+  content: "\6b";
+}
+.icon-close:before {
+  content: "\41";
+}
+.icon-info-3:before {
+  content: "\45";
+}
+.icon-arrow-down:before {
+  content: "\63";
+}
+.icon-closed-folder:before {
+  content: "\42";
+}
+.icon-eye:before {
+  content: "\43";
+}
+.icon-info-4:before {
+  content: "\44";
+}
+.icon-opened-folder:before {
+  content: "\46";
+}
+.icon-pdf:before {
+  content: "\48";
+}
+.icon-screen:before {
+  content: "\49";
+}
+.icon-draw-line:before {
+  content: "\4a";
+}
+.icon-draw-point:before {
+  content: "\4b";
+}
+.icon-draw-polygon:before {
+  content: "\4c";
+}
+.icon-draw-text:before {
+  content: "\4d";
+}
+.icon-facebook:before {
+  content: "\4e";
+}
+.icon-measure-area:before {
+  content: "\4f";
+}
+.icon-measure-lenght:before {
+  content: "\50";
+}
+.icon-measure-path:before {
+  content: "\51";
+}
+.icon-twitter:before {
+  content: "\52";
 }

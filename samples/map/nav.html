@@ -3,35 +3,64 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Navbar MapStore2</title>
+<meta name="author" content="GeoSolutions & Chef Studio" />
+<link rel="shortcut icon" href="favicon.ico">
+
 <link href="../../theme/default/css/css.css" rel="stylesheet">
 <link href="../../theme/default/css/custom.css" rel="stylesheet">
 <link href="../../theme/default/css/font.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 </head>
 
 <body>
 <nav class="navbar navbar-default" role="navigation">
 
-  <!—tool work -->
-  <div class="navbar-header">
-    <button type="button" class="btn btn-lg btn-primary shadow">
+ <!--tool work button -->
+  <div class="navbar-header shadow">
+    <button type="button" class="btn btn-lg btn-primary square-button">
     		<div class="icon icon-work"></div>
     </button>
   </div>
   
-  <!— menu search account-->
+  <!--menu search account-->
 <ul class="nav navbar-nav navbar-right">
-           
+
+<!--dropdown account-->  
+        <button type="button" class="btn btn-lg btn-primary square-button visible-xs">
+    		<div class="icon icon-search"></div>
+   		</button>
+
+     <!--search bar--> 
+    <li>  
+    <div class="search-wrap">
+            <div class="input-group stylish-input-group">
+                    <input type="text" class="form-control"  placeholder="Search by location name or coordinates..." >
+                    <span class="input-group-addon">
+                        <button type="submit" class="btn-default btn-lg square-button">
+                            <div class="icon icon-search"></div>
+                        </button>  
+                    </span>
+    		</div>
+    </div>
+    </li>
+    
+    <li class="divider-horiz"></li>
+    
+           <!--dropdown options-->     
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <button type="button" class="btn btn-lg btn-primary">
+        <button type="button" class="btn btn-lg btn-primary square-button">
     		<div class="icon icon-menu"></div>
    		</button></a>
-    
+        
         <ul class="dropdown-menu">
-          <li class="bar">OPTIONS</li>
-          <li><a href="#"><span class="icon icon-home pull-left option-icon"></span>BACK TO HOME</a></li>
+          <li class="bar">OPTIONS
+          <button type="button" class="close close-xs" data-dismiss="modal"><div class="icon icon-close"></div></button>
+          </li>
+          <li><a href="#"> <span class="icon icon-home pull-left option-icon"></span>BACK TO HOME</a></li>
           <li class="divider"></li>
-          <li><a href="#"><span class="icon icon-print pull-left option-icon"></span>PRINT/SCREENSHOT</a></li>
+          <li><button data-toggle="modal" data-target="#print"><span class="icon icon-print pull-left option-icon"></span>PRINT/SCREENSHOT</button></li>
           <li class="divider"></li>
           <li><a href="#"><span class="icon icon-share pull-left option-icon"></span>SHARE</a></li>
           <li class="divider"></li>
@@ -41,32 +70,25 @@
         </ul>
     </li>
     
-    <li>  
-    <div class="search-wrap">
-            <div class="input-group stylish-input-group">
-                    <input type="text" class="form-control"  placeholder="Search by location name or coordinates..." >
-                    <span class="input-group-addon">
-                        <button type="submit" class="btn-default btn-lg">
-                            <div class="icon icon-search"></div>
-                        </button>  
-    		</div>
-    </div>
-            
-    </li>
+    <li class="divider-horiz"></li>
     
+    <!--dropdown account--> 
     <li class="dropdown">
         
          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-        <button type="button" class="btn btn-lg btn-primary">
+        <button type="button" class="btn btn-lg btn-primary square-button">
     		<div class="icon icon-account"></div>
    		</button></a>
         
         <ul class="dropdown-menu">
-          <li class="bar">OPTIONS</li>
+          <li class="bar">
+          <div class="float-left">ACCOUNT</div> 
+          <button type="button" class="close close-xs" data-dismiss="modal"><div class="icon icon-close"></div></button>
+          </li>
           <li><a href="#">CHANGE PASSWORD</a></li>
           <li class="divider"></li>
-          <li class="margin-left-15">Administrator
-           <button type="button" class="btn btn-sm btn-info">
+          <li class="list-with-button">Administrator
+           <button type="button" class=" btn btn-primary float-right button-custom">
     		LOG OUT
    		   </button></a>
           </li>
@@ -74,8 +96,81 @@
     </li>  
      
 </ul>
-  
 </nav>
+
+<!--Panel print-->
+   <div class="modal fade" id="print" role="dialog">
+   <div class="modal-dialog">
+   
+   <!--Panel print print--> 
+    <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><div class="icon icon-close"></div></button>
+          <p class="modal-title">Print/Screenshot</p>
+        </div>
+        
+        <div class="modal-body">
+          <p>PRINT ICONS </p>
+        </div>
+       
+    </div>
+    
+    </div>
+    </div>
+    
+ <!--control map iconst-->    
+    <div class="absolute-map">
+  <div class="btn-group-vertical shadow">
+    
+    <button type="button" class="map-botton btn btn-md btn-primary ">
+    <div class="icon icon-position"></div>
+    </button>
+    <div class="divider-map"></div>
+   <button type="button" class="map-botton btn btn-md  btn-primary ">
+    <div class="icon icon-in"></div>
+    </button>
+    <div class="divider-map"></div>
+    <button type="button" class="map-botton btn btn-md  btn-primary ">
+    <div class="icon icon-out"></div>
+    </button>
+    <div class="divider-map"></div>
+    <button type="button" class="map-botton btn btn-md  btn-primary ">
+    <div class="icon icon-prev"></div>
+    </button>
+    <div class="divider-map"></div>
+   <button type="button" class="map-botton btn btn-md  btn-primary ">
+    <div class="icon icon-forward"></div>
+    </button>
+    <div class="divider-map"></div>
+    <button type="button" class="map-botton btn btn-md  btn-primary ">
+    <div class="icon icon-all"></div>
+    </button>
+    <div class="divider-map"></div>
+    <button type="button" class="map-botton btn btn-map btn-md btn-primary ">
+    <div class="icon icon-more"></div>
+    </button>
+    
+  </div>
+</div>
+
+<div class="absolute-info">
+
+ <button type="button" class="map-botton btn btn-map btn-md btn-primary shadow float-left">
+    <div class="icon icon-info"></div>
+ </button>
+ 
+ <div class="scale float-right">
+    <div class="line">
+    100km
+    </div>
+    <div class="choose-scale">
+    choose scale
+    </div>
+ </div>   
+ 
+</div>
+    
+
 
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
