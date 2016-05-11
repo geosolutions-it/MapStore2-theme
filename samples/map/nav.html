@@ -5,32 +5,41 @@
 <title>Navbar MapStore2</title>
 <meta name="author" content="GeoSolutions & Chef Studio" />
 <link rel="shortcut icon" href="favicon.ico">
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
 <link href="../../theme/default/css/css.css" rel="stylesheet">
 <link href="../../theme/default/css/custom.css" rel="stylesheet">
 <link href="../../theme/default/css/font.css" rel="stylesheet">
+<link href="../../theme/default/css/map.css" rel="stylesheet">
 
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
 </head>
 
 <body>
-<nav class="navbar navbar-default" role="navigation">
+<div class="work-button">
 
  <!--tool work button -->
-  <div class="navbar-header shadow">
+  <div class=" shadow">
     <button type="button" class="btn btn-lg btn-primary square-button">
     		<div class="icon icon-work"></div>
     </button>
   </div>
+
+</div> <!-- close work button -->
+
   
   <!--menu search account-->
-<ul class="nav navbar-nav navbar-right">
+<div class="navbar-dx shadow">
 
-<!--dropdown account-->  
+<ul>
+
+<!--search bar button--> 
+  		 <li class="visible-xs"> 
         <button type="button" class="btn btn-lg btn-primary square-button visible-xs">
     		<div class="icon icon-search"></div>
    		</button>
-
+		 </li>
+         
      <!--search bar--> 
     <li>  
     <div class="search-wrap">
@@ -81,13 +90,12 @@
    		</button></a>
         
         <ul class="dropdown-menu">
-          <li class="bar">
-          <div class="float-left">ACCOUNT</div> 
-          <button type="button" class="close close-xs" data-dismiss="modal"><div class="icon icon-close"></div></button>
+          <li class="bar">ACCOUNT
+           <button type="button" class="close close-xs" data-dismiss="modal"><div class="icon icon-close"></div></button>
           </li>
           <li><a href="#">CHANGE PASSWORD</a></li>
           <li class="divider"></li>
-          <li class="list-with-button">Administrator
+          <li class="list-with-button"><span class="padding15"> Administrator</span>
            <button type="button" class=" btn btn-primary float-right button-custom">
     		LOG OUT
    		   </button></a>
@@ -96,7 +104,7 @@
     </li>  
      
 </ul>
-</nav>
+</div>
 
 <!--Panel print-->
    <div class="modal fade" id="print" role="dialog">
@@ -122,31 +130,31 @@
     <div class="absolute-map">
   <div class="btn-group-vertical shadow">
     
-    <button type="button" class="map-botton btn btn-md btn-primary ">
+    <button type="button" class="map-button btn-primary ">
     <div class="icon icon-position"></div>
     </button>
     <div class="divider-map"></div>
-   <button type="button" class="map-botton btn btn-md  btn-primary ">
+   <button type="button" class="map-button btn-primary ">
     <div class="icon icon-in"></div>
     </button>
     <div class="divider-map"></div>
-    <button type="button" class="map-botton btn btn-md  btn-primary ">
+    <button type="button" class="map-button btn-primary ">
     <div class="icon icon-out"></div>
     </button>
     <div class="divider-map"></div>
-    <button type="button" class="map-botton btn btn-md  btn-primary ">
+    <button type="button" class="map-button btn-primary ">
     <div class="icon icon-prev"></div>
     </button>
     <div class="divider-map"></div>
-   <button type="button" class="map-botton btn btn-md  btn-primary ">
+   <button type="button" class="map-button btn-primary ">
     <div class="icon icon-forward"></div>
     </button>
     <div class="divider-map"></div>
-    <button type="button" class="map-botton btn btn-md  btn-primary ">
+    <button type="button" class="map-button btn-primary ">
     <div class="icon icon-all"></div>
     </button>
     <div class="divider-map"></div>
-    <button type="button" class="map-botton btn btn-map btn-md btn-primary ">
+    <button type="button" class="map-button btn-primary ">
     <div class="icon icon-more"></div>
     </button>
     
@@ -155,20 +163,44 @@
 
 <div class="absolute-info">
 
- <button type="button" class="map-botton btn btn-map btn-md btn-primary shadow float-left">
+ 	<button type="button" class="map-button btn-primary shadow float-left">
     <div class="icon icon-info"></div>
- </button>
+	 </button>
  
- <div class="scale float-right">
-    <div class="line">
-    100km
-    </div>
-    <div class="choose-scale">
-    choose scale
-    </div>
- </div>   
+ 	<div class="scale float-right">
+ 		<div class="choose-scale">
+    	<select class="form-control" id="scale">
+    		<option>1:591658711</option>
+    		<option>1:295829355</option>
+    		<option>1:147914678</option>
+    		<option>1:73957339</option>
+            <option>1:36978669</option>
+    		<option>1:18489335</option>
+    		<option>1:9244667</option>
+    		<option>1:4622334</option>
+            <option>1:2311167</option>
+    		<option>1:1155583</option>
+    		<option>1:577792</option>
+    		<option>1:288896</option>
+            <option>1:144448</option>
+    		<option>1:72224</option>
+    		<option>1:36112</option>
+    		<option>1:18056</option>
+            <option>1:9028</option>
+    		<option>1:4514</option>
+    		<option>1:2257</option>
+    		<option>1:1128</option>
+            <option>1:564</option>
+    		<option>1:282</option>
+  		</select>
+    	</div>
+   		<div class="line">
+   	    100km
+        </div>
+	</div>   
  
-</div>
+</div>  <!-- absolute info close -->
+    
     
 
 

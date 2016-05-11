@@ -8,7 +8,9 @@ html,body {
   margin: 0;
   	height:100%;
 	width:100%;
+	font-family: 'Raleway', sans-serif;
 }
+
 article,
 aside,
 details,
@@ -111,10 +113,25 @@ textarea {
   color: inherit;
   font: inherit;
   margin: 0;
+  padding:0;
 }
+
+textarea {
+  margin-top:15px;
+  width:260px;
+  padding:5px;
+  border:1px solid #078AA3;
+}
+
+:focus {
+  outline-color: transparent;
+  outline-style: none;
+}
+
 button {
   overflow: visible;
 }
+
 button,
 select {
   text-transform: none;
@@ -1691,7 +1708,7 @@ output {
 .form-control {
   display: block;
   width: 100%;
-  height: 56px;
+  height: 50px;
   padding: 0 12px;
   font-size: 14px;
   line-height: 1.428571429;
@@ -2008,11 +2025,7 @@ select[multiple].input-lg {
   -moz-transition:all 0.2s ease-in;
   -o-transition:all 0.2s ease-in;
 }
-.shadow{
-   -webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
--moz-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
-}
+
 .btn:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
@@ -2325,7 +2338,6 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-lg,
 .btn-group-lg > .btn {
-  padding: 15px;
   font-size: 38px;
   line-height: 1.33;
   border-radius: 0;
@@ -3016,8 +3028,8 @@ input[type="button"].btn-block {
 }
 .dropdown {
   position: relative;
-
 }
+
 .dropdown-toggle:focus {
   outline: 0;
 }
@@ -3058,16 +3070,19 @@ input[type="button"].btn-block {
   line-height: 1.428571429;
   color: #333333;
   white-space: nowrap;
+    -webkit-transition:all 0.2s ease-in;
+  -moz-transition:all 0.2s ease-in;
+  -o-transition:all 0.2s ease-in;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  background-color: #f2f2f2;
+  background-color: #eeeeee;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
-  color: #f2f2f2;
+  color: #eeeeee;
   text-decoration: none;
   outline: 0;
   background-color: #078aa3;
@@ -3650,8 +3665,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 56px;
-  margin-bottom: 20px;
+  min-height: 50px;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -3845,9 +3859,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
   .navbar-right {
     float: right !important;
-	-webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
--moz-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
   }
 }
 .navbar-form {
@@ -4003,7 +4014,6 @@ box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: green;
   color: #555555;
 }
 
@@ -4037,7 +4047,7 @@ box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #555555;
-  width:56px;
+  width:50px;
   right:0px;
 }
 }
@@ -4638,8 +4648,8 @@ a.thumbnail.active {
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #ffffff;
-  border: 1px solid #dddddd;
 }
+
 .list-group-item:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
@@ -5181,7 +5191,6 @@ button.close {
 }
 .modal-body {
   position: relative;
-  padding: 20px;
 }
 .modal-footer {
   margin-top: 15px;
@@ -5201,19 +5210,19 @@ button.close {
 }
 
 .modal-dialog {
-    width: 288px;
+    width: 290px;
 }
   
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 288px;
+    width: 290px;
     margin: auto;
 	margin-top: 150px;
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-	width:288px;
+	width:290px;
   }
   .modal-sm {
     width: 300px;
