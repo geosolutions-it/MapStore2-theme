@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Map Tool MapStore2</title>
+<title>Measurement Tool MapStore2</title>
 <meta name="author" content="GeoSolutions & Chef Studio" />
 <link rel="shortcut icon" href="favicon.ico">
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<div class="sidebar shadow overflow">
+<div class="sidebar shadow">
 	<div class="close-sidebar float-left">
     <button type="button" class="close-sidebar btn-default" data-dismiss="modal"><div class="icon icon-close"></div></button>
 	</div>
@@ -44,53 +44,25 @@
             
      </ul>
     <div class="working floatstop">
-    	 <div class="title-tool">CHANGE BACKGROUND</div>
+    	 <div class="title-tool">MEASUREMENT TOOL</div>
        
         <ul class="list-group">
         
             <li class="divider"></li>
             
-            <li class="list-group-item">
-            Bing Aerial
-            <div class="map-container"></div>
-            </li>
+            <li class="draw-button"><button data-toggle="modal" data-target="#print"><span class="icon icon-measure-lenght pull-left option-icon"></span>MEASURE DISTANCE</button></li>
+             
+            <li class="divider">
             
-           <li class="divider"></li>
-           
-           <li class="list-group-item">
-            Open Street Map
-            <div class="map-container"></div> 
-           </li>
-           
-           <li class="divider"></li>
-           
-           <li class="list-group-item">
-            Mapquest Openstreetmap
-            <div class="map-container"></div> 
-           </li>
-           
-           <li class="divider"></li>
-           
-           <li class="list-group-item">
-            Google Terrain
-            <div class="map-container"></div> 
-           </li>
-           
-           <li class="divider"></li>
-           
-           <li class="list-group-item">
-            Google Roadmap
-            <div class="map-container"></div> 
-           </li>
-           
-           <li class="divider"></li>
-           
-           <li class="list-group-item">
-            Google Hybrid
-            <div class="map-container"></div> 
-           </li> 
-           
-       </ul>
+            <li class="draw-button"><button data-toggle="modal" data-target="#print"><span class="icon icon-measure-path pull-left option-icon"></span>MEASURE PATH</button></li>
+             
+            <li class="divider">
+            
+            <li class="draw-button"><button data-toggle="modal" data-target="#print"><span class="icon icon-measure-area pull-left option-icon"></span>MEASURE AREA</button></li>
+             
+            <li class="divider"> 
+            
+        </ul>
     	
     </div>
 
