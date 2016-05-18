@@ -506,25 +506,27 @@ navbar-dx .search-wrap {
 .working-eye {
 	position: absolute;
 	top: 15px;
-	font-size: 32px;
-	margin-top: -2px;
+	font-size:25px;
+	margin-top:-1px;
+	left: 45px;
 }
 .layer-name {
 	position: absolute;
 	top: 15px;
-	margin-left: 70px;
+	margin-left: 60px;
 }
-.working-arrow {
+
+.working-option {
 	position: absolute;
 	top: 15px;
 	font-size: 22px;
 	right: 15px;
+	margin-top:2px;
 }
 .working-folder {
 	position: absolute;
 	top: 15px;
-	left: 55px;
-	font-size: 25px;
+	font-size: 23px;
 }
 .map-container {
 	height: 100px;
@@ -579,6 +581,7 @@ navbar-dx .search-wrap {
 	-moz-transition: all 0.2s ease-in;
 	-o-transition: all 0.2s ease-in;
 }
+
 .modal-body li a:hover {
 	background-color: #eeeeee;
 	text-decoration: none;
