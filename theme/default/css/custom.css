@@ -15,9 +15,7 @@ html {
 .floatstop {
 	clear: both;
 }
-.menu ul {
-	list-style: none;
-}
+
 
 a:hover, a:active, a:link, a:focus  {
 	text-decoration:none
@@ -175,7 +173,6 @@ a:hover, a:active, a:link, a:focus  {
 .customer-logo{
 	width:200px;
 	height:28px;
-	border:1px solid #eeeeee;
 	margin-top:11px;
 	margin-left:8px;
 }
@@ -224,8 +221,82 @@ a:hover, a:active, a:link, a:focus  {
     -o-transition:all 0.3s ease-in;
 }
 
+.map-thumb-001 { 
+	background: url(../../../samples/map/img/img-index/001.jpg);
+	background-size: cover;
+}
+
+.map-thumb-002 { 
+	background: url(../../../samples/map/img/img-index/002.jpg);
+	background-size: cover;
+}
+
+.map-thumb-003 { 
+	background: url(../../../samples/map/img/img-index/003.jpg);
+	background-size: cover;
+}
+
+.map-thumb-004 { 
+	background: url(../../../samples/map/img/img-index/004.jpg);
+	background-size: cover;
+}
+
+.map-thumb-005 { 
+	background: url(../../../samples/map/img/img-index/005.jpg);
+	background-size: cover;
+}
+
+.map-thumb-006 { 
+	background: url(../../../samples/map/img/img-index/006.jpg);
+	background-size: cover;
+}
+
+.map-thumb-007 { 
+	background: url(../../../samples/map/img/img-index/007.jpg);
+	background-size: cover;
+}
+
+.map-thumb-008 { 
+	background: url(../../../samples/map/img/img-index/008.jpg);
+	background-size: cover;
+}
+
+.map-thumb-009 { 
+	background: url(../../../samples/map/img/img-index/009.jpg);
+	background-size: cover;
+}
+.map-thumb-010 { 
+	background: url(../../../samples/map/img/img-index/010.jpg);
+	background-size: cover;
+}
+
+.map-thumb-011 { 
+	background: url(../../../samples/map/img/img-index/011.jpg);
+	background-size: cover;
+}
+
+.map-thumb-012 { 
+	background: url(../../../samples/map/img/img-index/012.jpg);
+	background-size: cover;
+}
+
+.map-thumb-013 { 
+	background: url(../../../samples/map/img/img-index/013.jpg);
+	background-size: cover;
+}
+
+.map-thumb-014 { 
+	background: url(../../../samples/map/img/img-index/014.jpg);
+	background-size: cover;
+}
+
+
 .search-wrap-home .search-wrap { 
 	width: 100%;
+}
+
+.search-wrap-home .btn-default {
+	background-color: #ffffff; 
 }
 
 .map-editing-tools {
@@ -438,7 +509,7 @@ navbar-dx .search-wrap {
 	height:25px;
 }
 .scale .choose-scale {
-	background-color: pink;
+	/* background-color: pink; */
 }
 /* working tool */
 .sidebar {
@@ -723,7 +794,44 @@ navbar-dx .search-wrap {
     direction: ltr;
 }
 
+/* INFO PANEL */
+.info-panel {
+	width:100%;
+}
+
+.info-wrap{
+	width:290px;
+	margin:auto;
+}
+
+.info-panel .arrows{
+	height:50px;
+	width:101px;
+	margin:15px 15px
+}
+
+.info-space {
+	height:350px;
+	width:290px;
+	margin:auto;
+	overflow:auto;
+	padding:15px;
+}
+
+.info-title {
+	font-weight:bold
+}
+
+
+
 @media (min-width: 768px) {
+	
+.menu {
+	position:absolute;
+	bottom:20px;
+	left:20px;	
+}
+
 .with-love{
 	position:absolute;
 	width:90px;
@@ -795,6 +903,51 @@ a:hover .map-thumb {
 	-moz-box-shadow: -1px 1px 5px 1px rgba(154,154,154,1);
 	box-shadow: -1px 1px 5px 1px rgba(154,154,154,1);
 }
+
+/* INFO PANEL */
+.info-panel {
+	width:290px;
+}
+
+.info-wrap{
+	width:290px;
+}
+
+/* PRINT */
+
+.print {
+	width: 580px;
+	}
+.print-side {
+	width: 50%;
+	}	
+	
+.label-print {position:relative; width: 120px;}
+
+.label-print:after {
+    content:'c';
+    font:20px "icon-mapstore2", monospace;
+    color:#078aa3;
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    transform:rotate(0deg);
+    right:4px; top:6px;
+    padding:0 0 2px;
+    position:absolute;
+    pointer-events:none;
+}
+
+.label-print:before {
+    content:'';
+    right:6px; top:0px;
+    width:20px; height:25px;
+    background:#f8f8f8;
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}	
+
 }
  @media (min-width: 1200px) {
 
@@ -805,5 +958,30 @@ a:hover .map-thumb {
 .navbar-dx .search-wrap {
 	width: 500px;
 	height: 50px;
+}
+
+/* INFO PANEL */
+.info-panel {
+	width:580px;
+}
+
+.info-panel .modal-header {
+	width:580px;
+}
+
+.info-panel .modal-content {
+	width:580px;
+}
+
+.info-panel .divider {
+	width:580px;
+}
+
+.info-space {
+	width:580px;
+}
+
+.info-wrap{
+	width:580px;
 }
 }

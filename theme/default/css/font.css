@@ -161,3 +161,33 @@
 .icon-twitter:before {
   content: "\59";
 }
+.icon-arrow-left:before {
+  content: "\69";
+}
+.icon-arrow-right:before {
+  content: "\4a";
+}
+.icon-arrow-up:before {
+  content: "\4b";
+}
+.icon-marker:before {
+  content: "\4c";
+}
+.icon-marker-2:before {
+  content: "\4d";
+}
+.icon-position-1:before {
+  content: "\4e";
+}
+.icon-position-2:before {
+  content: "\4f";
+}
+.icon-bold:before {
+  content: "\50";
+}
+.icon-italic:before {
+  content: "\51";
+}
+.icon-refresh:before {
+  content: "\52";
+}
