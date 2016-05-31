@@ -290,13 +290,23 @@ a:hover, a:active, a:link, a:focus  {
 	background-size: cover;
 }
 
-
 .search-wrap-home .search-wrap { 
-	width: 100%;
+	width: 90%;
+	margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+	position:absolute;
+	bottom:15px;
 }
 
 .search-wrap-home .btn-default {
 	background-color: #ffffff; 
+}
+
+.text-home{
+	width:100%;
+	margin:auto;
 }
 
 .map-editing-tools {
@@ -887,6 +897,15 @@ navbar-dx .search-wrap {
 }
 
 /* home */
+
+.search-wrap-home .search-wrap { 
+	width: 580px;
+}
+
+.text-home{
+	width:70%;
+}
+
 .customer-logo{
 	width:225px;
 	height:36px;
