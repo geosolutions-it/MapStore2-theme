@@ -76,13 +76,12 @@ a:hover, a:active, a:link, a:focus  {
 .option-icon {
 	font-size: 32px;
 	margin-right: 15px;
-	margin-top: -2px;
+	margin-top: -15px;
 	color: #078AA3;
 }
 
 .dropdown-menu .list-with-button {
 	margin-top:15px;
-
 }
 
 .dropdown-menu .list-with-button button {
@@ -135,7 +134,7 @@ a:hover, a:active, a:link, a:focus  {
 	width:290px;
 }
 
-.btn-primary .icon {
+.btn-primary .glyphicon {
 	font-size:35px;
 }
 
@@ -194,9 +193,9 @@ a:hover, a:active, a:link, a:focus  {
 	margin-top: 30px;
 }
 
-.col .map-thumb .icon {
+.col .map-thumb .glyphicon {
 	font-size:20px;
-	margin-top:2px;
+	margin-top:-7px;
 }
 
 .col-no-margin {
@@ -330,25 +329,14 @@ a:hover, a:active, a:link, a:focus  {
 	bottom: 5px;
 }
 
-.absolute-map .icon {
-	font-size:30px;
-	margin-top:5px;
-	margin-left: -2px;
-}
-
-.absolute-info .icon {
-	font-size:30px;
-	margin-top:5px;
-	margin-left: -2px;
-}
-
 .square-button {
 	height: 50px;
 	width: 50px;
 }
-.square-button .icon {
-	margin-left: -7px;
-    margin-top: 8px;
+
+.square-button .glyphicon {
+    margin-left: -5px;
+    margin-top: -8px;
 }
 
 .dropdown-menu button {
@@ -367,8 +355,6 @@ a:hover, a:active, a:link, a:focus  {
 	background-color: #eeeeee;
 }
 
-
-
 .dropdown-menu a {
 	text-decoration: none;
 	color: #333333;
@@ -382,15 +368,10 @@ a:hover, a:active, a:link, a:focus  {
 	margin-top: -16px;
 }
 
-.absolute-map .square-button .icon{
-	margin-left:-3px;
-}
-
 .absolute-info {
 	position: absolute;
 	bottom: 5px;
 	right: 60px;
-	width: 180px;
 	height: 50px;
 }
 
@@ -400,12 +381,16 @@ a:hover, a:active, a:link, a:focus  {
 
 .info-container{
 	height:50px;
-	width:50px;
-	float:left;
+	margin-right:10px;
+}
+
+.lat-long{
+	padding:5px 10px;
+	background-color:#ffffff;	
 }
 
 #scale { /* scale widget */
-	height: 25px;
+	height:25px;
 	-webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;
@@ -415,17 +400,16 @@ a:hover, a:active, a:link, a:focus  {
    position:relative;
 }
 
-.label-modal {position:relative; width: 70px;}
-
 .label-modal:after {
-    content:'c';
-    font:20px "icon-mapstore2", monospace;
+    content:'1';
+    font:22px "icon-mapstore2", monospace;
     color:#078aa3;
     -webkit-transform:rotate(0deg);
     -moz-transform:rotate(0deg);
     -ms-transform:rotate(0deg);
     transform:rotate(0deg);
-    right:0px; top:6px;
+    right:0px; 
+	top:-8px;
     padding:0 0 2px;
     position:absolute;
     pointer-events:none;
@@ -441,6 +425,16 @@ a:hover, a:active, a:link, a:focus  {
     display:block;
 }	
 
+.label-width-lg {
+	width: 130px;
+}
+
+.label-width-md {
+	width: 90px;
+}
+
+.label-scale {position:relative;}
+
 .select-cord {
 	width: 130px;
 }
@@ -449,17 +443,18 @@ a:hover, a:active, a:link, a:focus  {
 	width: 80px;
 }
 
-.label-scale {position:relative; width: 120px;}
+.label-scale {position:relative;}
 
 .label-scale:after {
-    content:'c';
-    font:20px "icon-mapstore2", monospace;
+    content:'1';
+    font:22px "mapstore2", monospace;
     color:#078aa3;
     -webkit-transform:rotate(0deg);
     -moz-transform:rotate(0deg);
     -ms-transform:rotate(0deg);
     transform:rotate(0deg);
-    right:4px; top:6px;
+    right:4px; 
+	top:-8px;
     padding:0 0 2px;
     position:absolute;
     pointer-events:none;
@@ -549,17 +544,16 @@ navbar-dx .search-wrap {
 	height: 50px;
 	width: 50px;
 }
-.sidebar .icon {
+
+.sidebar .glyphicon {
 	margin-left: -5px;
+	margin-top:-5px;
 }
 .sidebar .close-sidebar {
 	height: 50px;
 	width: 50px;
-	font-size: 30px;
 }
-.sidebar .close-sidebar .icon {
-	padding-top: 10px;
-}
+
 .sidebar .working {
 	width: 290px;
 	margin: auto;
@@ -584,13 +578,14 @@ navbar-dx .search-wrap {
 	font-weight: bold;
 	padding: 15px;
 }
+
 .working-eye {
 	position: absolute;
-	top: 15px;
-	font-size:25px;
-	margin-top:-1px;
-	left: 45px;
+	top: 6px;
+	font-size:35px;
+	left: 43px;
 }
+
 .layer-name {
 	position: absolute;
 	top: 15px;
@@ -643,6 +638,9 @@ navbar-dx .search-wrap {
 }
 
 /* Panel OPTIONS modal body  */
+.modal-header .close {
+  margin-top: -12px;
+}
 
 .modal-body ul {
 	list-style: none;
@@ -944,8 +942,8 @@ a:hover .map-thumb {
 .label-print {position:relative; width: 120px;}
 
 .label-print:after {
-    content:'c';
-    font:20px "icon-mapstore2", monospace;
+    content:'1';
+    font:20px "mapstore2", monospace;
     color:#078aa3;
     -webkit-transform:rotate(0deg);
     -moz-transform:rotate(0deg);
