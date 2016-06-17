@@ -2398,11 +2398,7 @@ input[type="button"].btn-block {
   -webkit-transition: height 0.35s ease;
   transition: height 0.35s ease;
 }
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('file:///C|/Users/andrea/app/fonts/glyphicons-halflings-regular.eot');
-  src: url('file:///C|/Users/andrea/app/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('file:///C|/Users/andrea/app/fonts/glyphicons-halflings-regular.woff') format('woff'), url('file:///C|/Users/andrea/app/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('file:///C|/Users/andrea/app/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -2684,7 +2680,7 @@ input[type="button"].btn-block {
 .glyphicon-question-sign:before {
   content: "\e085";
 }
-.glyphicon-info-sign:before {
+.glyphicon-info-sign-sign:before {
   content: "\e086";
 }
 .glyphicon-screenshot:before {
@@ -2732,10 +2728,10 @@ input[type="button"].btn-block {
 .glyphicon-fire:before {
   content: "\e104";
 }
-.glyphicon-eye-open:before {
+.glyphicon-eye-open-open:before {
   content: "\e105";
 }
-.glyphicon-eye-close:before {
+.glyphicon-eye-open-close:before {
   content: "\e106";
 }
 .glyphicon-warning-sign:before {
@@ -5087,7 +5083,6 @@ a.list-group-item-danger.active:focus {
   font-size: 30px;
   color: #ffffff;
   right:0;
-  margin-top:15px;
       transition: all 0.2s ease-in;
   -webkit-transition:all 0.2s ease-in;
   -moz-transition:all 0.2s ease-in;
@@ -5177,9 +5172,7 @@ button.close {
 	padding:15px;
 	font-weight:bold;
 }
-.modal-header .close {
-  margin-top: 0px;
-}
+
 .modal-title {
   margin: 0;
   line-height: 1.428571429;
