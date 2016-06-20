@@ -121,6 +121,9 @@
 .glyphicon-1-screen-back:before {
   content: "\42";
 }
+.glyphicon-1-screen-backward:before {
+  content: "\42";
+}
 .glyphicon-1-screen-forward:before {
   content: "\43";
 }
