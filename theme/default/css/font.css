@@ -619,3 +619,10 @@
 .glyphicon-zoom-out:before {
   content: "\e062";
 }
+/** FIXES FOR BOOTSTRAP ICONS **/
+.glyphicon-option-horizontal:before {
+  content: "\77"
+}
+.glyphicon-menu-hamburger:before {
+  content: "\75";
+}

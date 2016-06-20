@@ -1,0 +1,126 @@
+/**********************************************/
+/** GENERAL************************************/
+/**********************************************/
+.square-button {
+	height: 50px;
+	width: 50px;
+}
+
+.square-button .glyphicon {
+    margin-left: -3px;
+    margin-top: -2px;
+    font-size: 35px;
+}
+
+/**********************************************/
+/** NAVBAR  ***********************************/
+/**********************************************/
+.navbar-dx ul, ol {
+	margin-bottom: 0;
+}
+
+.navbar-dx.shadow, .navbar-dx .MapSearchBar .input-group {
+	-webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+	-moz-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+	box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+}
+
+.navbar-dx ul, ol {
+	margin-bottom: 0;
+}
+
+.navbar .square-button {
+	height: 50px;
+	width: 50px;
+}
+/* -------*/
+/* Search */
+/* -------*/
+#mapstore-navbar .navbar-dx .MapSearchBar .input-group{
+	width: 500px;
+}
+
+#mapstore-navbar .navbar-dx .MapSearchBar .input-group-addon{
+    height: 50px;
+    width: 50px;
+    color: #078aa3;
+    margin-top: -8px;
+    margin-left: -5px;
+    border: 0px;
+    border-radius: 0px;
+    font-size:28px;
+    border-rad
+}
+
+#mapstore-navbar .navbar-dx .search-result-list{
+    top: 55px;
+}
+.navbar-dx.shadow, .navbar-dx .MapSearchBar .input-group {
+	-webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+	-moz-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+	box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+}
+
+@media (max-width: 768px ) {
+    #mapstore-navbar .search-toggle {
+        display: inline-block;
+    }
+    #mapstore-navbar .MapSearchBar {
+        width: 400px;
+        top: 50px;
+        left: auto;
+    }
+
+    #mapstore-navbar .search-result-list{
+        top: 85px;
+        left: auto;
+        width: 400px;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px ) {
+    #mapstore-navbar .MapSearchBar {
+        width: 500px;
+        right: auto;
+    }
+    #mapstore-navbar .search-result-list{
+        width: 500px;
+        right: auto;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #mapstore-navbar .MapSearchBar {
+        width: 500px;
+        right: auto;
+    }
+    #mapstore-navbar .search-result-list{
+        width: 500px;
+        right: auto;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #mapstore-navbar .MapSearchBar {
+        width: 500px;
+        position:absolute;
+    }
+    #mapstore-navbar .search-result-list{
+        width: 500px;
+        right: auto;
+    }
+}
+
+/**********************************************/
+/** NAVBAR  ***********************************/
+/**********************************************/
+.mapToolbar {
+  box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+}
+
+.mapToolbar .btn-group-vertical {
+  border-bottom: 2px solid #5C9FB4;
+}
