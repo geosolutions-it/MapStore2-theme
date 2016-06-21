@@ -464,7 +464,8 @@
   content: "\e02e";
 }
 .glyphicon-remove:before {
-  content: "\e02f";
+  content: "\64";
+  // content: "\e02f";
 }
 .glyphicon-remove-circle:before {
   content: "\e030";
