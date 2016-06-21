@@ -190,6 +190,11 @@
 .mapToolbar.btn-group-vertical .btn:last-child {
   border-bottom: 0px;
 }
+div#mapstore-globalspinner {
+	width: 50px !important;
+	height: 50px !important;
+}
+
 
 /**********************************************/
 /** DRAWER MENU  ******************************/
