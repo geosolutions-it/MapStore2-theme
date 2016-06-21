@@ -45,11 +45,21 @@
 	height: 50px;
 	width: 50px;
 }
+
+/* button dividers */
+#mapstore-burger-menu {
+  border-right: 1px solid #5C9FB4;
+  border-left: 1px solid #5C9FB4;
+}
 /* -------*/
 /* Search */
 /* -------*/
 #mapstore-navbar .navbar-dx .MapSearchBar .input-group{
 	width: 500px;
+}
+/* remove default inbox bootstrap shadow on focus for the input */
+#mapstore-navbar .navbar-dx .MapSearchBar .form-control:focus {
+  box-shadow: none;
 }
 
 #mapstore-navbar .navbar-dx .MapSearchBar .input-group-addon{
@@ -61,8 +71,11 @@
     border: 0px;
     border-radius: 0px;
     font-size:28px;
-    border-rad
 }
+ #mapstore-navbar .navbar-dx .MapSearchBar .input-group-addon .searchclear {
+    font-size:28px;
+ }
+
 
 #mapstore-navbar .navbar-dx .search-result-list{
     top: 55px;
@@ -71,6 +84,12 @@
 	-webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
 	-moz-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
 	box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
+}
+#mapstore-navbar #helpbadge-null {
+  position: absolute;
+  left: -10px;
+  bottom: -8px;
+  z-index: 1
 }
 
 @media (max-width: 768px ) {
@@ -91,14 +110,26 @@
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px ) {
-    #mapstore-navbar .MapSearchBar {
-        width: 500px;
-        right: auto;
+@media (max-width: 768px ) {
+    #mapstore-navbar .search-toggle {
+        display: inline-block;
     }
-    #mapstore-navbar .search-result-list{
-        width: 500px;
-        right: auto;
+    #mapstore-navbar .navbar-dx .MapSearchBar {
+        position: fixed;
+        left:1px;
+        right: 1px;
+        top: 50px;
+        width: auto;
+    }
+    #mapstore-navbar .navbar-dx .MapSearchBar  .input-group {
+      width: 100%;
+    }
+    #mapstore-navbar .navbar-dx .search-result-list{
+        position: fixed;
+        left:15px;
+        right: 15px;
+        top: 105px;
+        width: 95%;
     }
 }
 
@@ -151,7 +182,11 @@
 .mapToolbar {
   box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
 }
-
-.mapToolbar .btn-group-vertical {
+/* button dividers */
+.mapToolbar.btn-group-vertical .btn {
   border-bottom: 2px solid #5C9FB4;
+}
+/* no divider for the last button */
+.mapToolbar.btn-group-vertical .btn:last-child {
+  border-bottom: 0px;
 }
