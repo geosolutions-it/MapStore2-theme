@@ -190,3 +190,68 @@
 .mapToolbar.btn-group-vertical .btn:last-child {
   border-bottom: 0px;
 }
+
+/**********************************************/
+/** DRAWER MENU  ******************************/
+/**********************************************/
+#mapstore-drawermenu .glyphicon {
+	margin-left: -5px;
+	margin-top: -5px;
+	font-size: 28px;
+
+}
+#mapstore-drawermenu .navHeader .glyphicon-remove {
+	color: #078aa3;
+}
+
+#mapstore-drawermenu .panel-default > .panel-heading {
+	color: #078AA3;
+	font-weight: bold;
+  background: transparent;
+}
+/*-------*/
+/*- TOC -*/
+/*-------*/
+#mapstore-drawermenu #mapstore-layers .toc-title, #mapstore-drawermenu #mapstore-layers .toc-group-title{
+	position: relative;
+}
+
+/* vISIBILITY CHECK */
+#mapstore-drawermenu #mapstore-layers .glyphicon, #mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon{
+		float: left;
+		overflow: hidden;
+    font-size: 28px;
+		z-index: 2;
+}
+#mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon{
+	 float: left;
+	 font-size: 35px;
+    top: -8px;
+}
+#mapstore-drawermenu #mapstore-layers .toc-default-layer .visibility-check.glyphicon {
+	font-size: 35px;
+  top: -10px;
+}
+#mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon.visibility-check.checked {
+		color: #078aa3;
+}
+/* GROUPS*/
+#mapstore-drawermenu #mapstore-layers .toc-group-title {
+	background:  transparent;
+}
+#mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon {
+	margin-top: 0px;
+	font-size: 23px;
+}
+#mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon-folder-open,#mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon-folder-close {
+	margin-top: -10px;
+	color: #078aa3;
+}
+#mapstore-drawermenu #mapstore-layers .toc-default-group {
+	border-bottom: 1px solid #dddddd;
+	padding: 5px 0;
+}
+#mapstore-drawermenu #mapstore-layers .toc-layer-tool {
+	font-size: 25px;
+	top: -16px;
+}
