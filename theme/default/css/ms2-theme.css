@@ -214,6 +214,15 @@ div#mapstore-globalspinner {
 	font-weight: bold;
   background: transparent;
 }
+/* NAV BUTTONS */
+#mapstore-drawermenu .navButtons .btn.square-button{
+	border-left: 1px solid #dddddd;
+	font-size: 35px;
+}
+#mapstore-drawermenu .navButtons .btn.square-button .glyphicon{
+	font-size: 35px;
+}
+
 /*-------*/
 /*- TOC -*/
 /*-------*/
