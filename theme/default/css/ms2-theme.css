@@ -269,3 +269,16 @@ div#mapstore-globalspinner {
 	font-size: 25px;
 	top: -16px;
 }
+
+#measure-result-panel .option-text {
+    font-size: 14px;
+    color: black;
+    text-transform: uppercase;
+}
+#measure-result-panel .btn-default {
+    background-color: white;
+}
+#measure-result-panel .glyphicon {
+    margin-left: 0;
+    margin-top: 0;
+}
