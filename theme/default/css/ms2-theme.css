@@ -200,7 +200,6 @@ div#mapstore-globalspinner {
 /** DRAWER MENU  ******************************/
 /**********************************************/
 #mapstore-drawermenu .glyphicon {
-	margin-left: -5px;
 	margin-top: -5px;
 	font-size: 28px;
 
@@ -230,55 +229,58 @@ div#mapstore-globalspinner {
 	position: relative;
 }
 
-/* vISIBILITY CHECK */
+/* VISIBILITY CHECK */
 #mapstore-drawermenu #mapstore-layers .glyphicon, #mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon{
-		float: left;
-		overflow: hidden;
-    font-size: 28px;
+    font-size: 23px;
 		z-index: 2;
 }
 #mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon{
 	 float: left;
-	 font-size: 35px;
-    top: -8px;
+	 font-size: 23px;
+	 margin-top: 0px;
 }
 #mapstore-drawermenu #mapstore-layers .toc-default-layer .visibility-check.glyphicon {
-	font-size: 35px;
-  top: -10px;
+	font-size: 23px;
 }
 #mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon.visibility-check.checked {
 		color: #078aa3;
 }
+#mapstore-drawermenu #mapstore-layers .toc-default-group > .visibility-check.glyphicon {
+	margin-top: 5px;
+}
 /* GROUPS*/
+#mapstore-drawermenu #mapstore-layers .group-expanded, .group-collapsed {
+		padding: 5px 0px;
+    border-bottom: 1px solid #dddddd;
+}
 #mapstore-drawermenu #mapstore-layers .toc-group-title {
 	background:  transparent;
 }
-#mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon {
-	margin-top: 0px;
+#mapstore-drawermenu #mapstore-layers .toc-default-layer .glyphicon {
 	font-size: 23px;
+	margin-top: -2px;
 }
 #mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon-folder-open,#mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon-folder-close {
-	margin-top: -10px;
 	color: #078aa3;
 }
 #mapstore-drawermenu #mapstore-layers .toc-default-group {
 	border-bottom: 1px solid #dddddd;
 	padding: 5px 0;
 }
+#mapstore-drawermenu #mapstore-layers .toc-group-children {
+    margin-left: 24px;
+}
+/* LAYER */
+#mapstore-drawermenu #mapstore-layers .toc-default-layer {
+    padding: 10px 0;
+}
 #mapstore-drawermenu #mapstore-layers .toc-layer-tool {
-	font-size: 25px;
-	top: -16px;
+	font-size: 22px;
 }
-
-#measure-result-panel .option-text {
-    font-size: 14px;
-    color: black;
-    text-transform: uppercase;
+.toc-default-layer .toc-title {
+	max-width: 140px;
 }
-#measure-result-panel .btn-default {
-    background-color: white;
-}
-#measure-result-panel .glyphicon {
-    margin-left: 0;
-    margin-top: 0;
+.toc-default-layer .inline-spinner{
+	position: relative;
+  top: -7px
 }
