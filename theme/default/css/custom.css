@@ -37,12 +37,32 @@ a:hover, a:active, a:link, a:focus  {
 	float: left;
 }
 
+.left15 {
+	margin-left:15px;
+}
+
 .padding15 {
 	padding: 15px;
 }
 
+.left15{
+	margin-left:15px
+}
+
+.pagging-left15{
+	padding-left:15px
+}
+
 .bottom15 {
 	margin-bottom: 15px;
+}
+
+.bottom5 {
+	margin-bottom: 5px;
+}
+
+.padding5 {
+	padding:5px;
 }
 
 .padding0 {
@@ -339,6 +359,17 @@ a:hover, a:active, a:link, a:focus  {
     margin-top: -8px;
 }
 
+.square-button-sm {
+	height: 25px;
+	width: 25px;
+}
+
+.square-button-sm .glyphicon {
+	margin-left: -2px;
+    margin-top: -7px;
+	font-size:20px;
+}
+
 .dropdown-menu button {
 	background-color: #ffffff;
 	border: 0;
@@ -390,8 +421,8 @@ a:hover, a:active, a:link, a:focus  {
 }
 
 #scale { /* scale widget */
-	height:25px;
-	-webkit-appearance: none;
+   height: 25px;
+   -webkit-appearance: none;
    -moz-appearance: none;
    appearance: none;
    background-color: #fff;
@@ -400,9 +431,14 @@ a:hover, a:active, a:link, a:focus  {
    position:relative;
 }
 
+.label-modal {
+	position:relative; 
+	width: 70px;
+}
+
 .label-modal:after {
     content:'1';
-    font:22px "icon-mapstore2", monospace;
+    font:22px "mapstore2", monospace;
     color:#078aa3;
     -webkit-transform:rotate(0deg);
     -moz-transform:rotate(0deg);
@@ -545,10 +581,6 @@ navbar-dx .search-wrap {
 	width: 50px;
 }
 
-.sidebar .glyphicon {
-	margin-left: -5px;
-	margin-top:-5px;
-}
 .sidebar .close-sidebar {
 	height: 50px;
 	width: 50px;
@@ -667,7 +699,7 @@ navbar-dx .search-wrap {
 }
 
 .modal-body textarea {
-  margin-top:15px;
+  margin-top:5px;
   width:260px;
   padding:5px;
   border:1px solid #078AA3;
@@ -830,6 +862,152 @@ navbar-dx .search-wrap {
 	font-weight:bold
 }
 
+/* print */
+
+.panel580 {
+	width:290px;
+}
+
+.wrap580{
+	width:260px;
+	padding:15px;
+}
+
+.box260{
+	width:260px;
+}
+
+.opacity-legend{
+	opacity:0.3;
+}
+
+.label-print {position:relative; width: 120px;}
+
+.label-print:after {
+    content:'c';
+    font:20px "mapstore2", monospace;
+    color:#078aa3;
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    transform:rotate(0deg);
+    right:4px; top:6px;
+    padding:0 0 2px;
+    position:absolute;
+    pointer-events:none;
+}
+
+.label-print:before {
+    content:'';
+    right:6px; top:0px;
+    width:20px; height:25px;
+    background:#f8f8f8;
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}
+
+/* ---------------------catalog-------------------- */
+
+.list-catalog li{
+	width:260px;
+	height:150px;
+}
+
+/* ---------------------checkbox new-------------------- */
+
+input[type=checkbox],
+input[type=radio] {
+        opacity: 0;
+        position: absolute;
+        z-index: 12;
+}
+
+input[type=checkbox]:checked,
+input[type=radio]:checked,
+input[type=checkbox]:focus,
+input[type=radio]:focus {
+        outline: none !important;
+}
+
+input[type=checkbox]+.lbl,
+input[type=radio]+.lbl {
+font-family: "mapstore2";
+        position: relative;
+        z-index: 11;
+        display: inline-block;
+        margin: 0;
+        line-height: 20px;
+        min-height: 20px;
+        min-width: 20px;
+        font-weight: normal;
+}
+
+
+input[type=checkbox]+.lbl::before,
+input[type=radio]+.lbl::before {
+		font-family: "mapstore2";
+        font-size: 22px;
+        color: #078aa3;
+        content: "";
+        background-color: #FAFAFA;
+        border: 1px solid #078aa3; /* color checkbox border */
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        border-radius: 0;
+        display: inline-block;
+        text-align: left;
+        vertical-align: left;
+        height: 20px; /* checkbox size */
+		width: 20px;
+        line-height: 13px;
+		font-size:19px;
+}
+
+input[type=checkbox]:checked+.lbl::before,
+input[type=radio]:checked+.lbl::before {
+		font-family: "mapstore2";
+        display: inline-block;
+        content: '\e01a';
+        background-color: #F5F8FC;
+        border-color: #078aa3;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+}
+
+input[type=checkbox]:hover+.lbl::before,
+input[type=radio]:hover+.lbl::before,
+input[type=checkbox]+.lbl:hover::before,
+input[type=radio]+.lbl:hover::before {
+        border-color: #078aa3;
+}
+
+input[type=checkbox]:active+.lbl::before,
+input[type=radio]:active+.lbl::before,
+input[type=checkbox]:checked:active+.lbl::before,
+input[type=radio]:checked:active+.lbl::before {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+input[type=checkbox]:disabled+.lbl::before,
+input[type=radio]:disabled+.lbl::before,
+input[type=checkbox][disabled]+.lbl::before,
+input[type=radio][disabled]+.lbl::before,
+input[type=checkbox].disabled+.lbl::before,
+input[type=radio].disabled+.lbl::before {
+        background-color: #DDD !important;
+        border-color: #078aa3 !important;
+        box-shadow: none !important;
+        color: #BBB;
+}
+
+input[type=radio]+.lbl::before {
+        border-radius: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+}
+
+input[type=radio]:checked+.lbl::before {
+        content: "\e01a";
+}	
 
 
 @media (min-width: 768px) {
@@ -930,40 +1108,31 @@ a:hover .map-thumb {
 	width:290px;
 }
 
-/* PRINT */
+/* PRINT big */
 
-.print {
-	width: 580px;
-	}
-.print-side {
-	width: 50%;
-	}	
-	
-.label-print {position:relative; width: 120px;}
-
-.label-print:after {
-    content:'1';
-    font:20px "mapstore2", monospace;
-    color:#078aa3;
-    -webkit-transform:rotate(0deg);
-    -moz-transform:rotate(0deg);
-    -ms-transform:rotate(0deg);
-    transform:rotate(0deg);
-    right:4px; top:6px;
-    padding:0 0 2px;
-    position:absolute;
-    pointer-events:none;
+.panel580 .modal-content {
+	width:580px;
 }
 
-.label-print:before {
-    content:'';
-    right:6px; top:0px;
-    width:20px; height:25px;
-    background:#f8f8f8;
-    position:absolute;
-    pointer-events:none;
-    display:block;
-}	
+.panel580 {
+	width:580px;
+	background-color:#ffffff;
+}
+
+.wrap580{
+	width:580px;
+	padding:0;
+}
+
+.box260{
+	margin:15px;
+}
+
+/* ---------------------catalog-------------------- */
+
+.list-catalog li{
+	margin:15px;
+}
 
 }
  @media (min-width: 1200px) {

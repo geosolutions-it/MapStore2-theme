@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Navbar MapStore2</title>
+<meta name="author" content="GeoSolutions & Chef Studio" />
+<link rel="shortcut icon" href="favicon.ico">
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+<link href="../../theme/default/css/css.css" rel="stylesheet">
+<link href="../../theme/default/css/custom.css" rel="stylesheet">
+<link href="../../theme/default/css/font.css" rel="stylesheet">
+<link href="../../theme/default/css/map.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+
+<body>
+<div class="modal-dialog panel580">
+
+	<div class="modal-content">
+    
+         <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><div class="glyphicon glyphicon-1-close"></div></button>
+		<p class="modal-title">PRINT</p>
+        </div>
+        
+	<div class="modal-body wrap580">      
+        
+        <div class="box260 float-left">
+        <strong>TITLE</strong>
+        <textarea class="bottom15" placeholder="Write a title here..."></textarea>
+       
+        <strong>DESCRIPTION</strong>
+        <textarea class="bottom15" placeholder="Write a description here..."></textarea>
+        
+        <strong>SHEET SIZE</strong>
+        <label class="float-right label-modal">
+    	<select class="form-control" id="scale">
+    		<option>A3</option>
+    		<option>A4</option>
+    		<option>A5</option>
+		</select>
+        </label> <br/><br/>
+       
+          
+         <strong>PAGE ORIENTATION</strong><br/>
+        <input type="radio" name="orientation" checked="checked"  value="landscape"/>
+        <span class="lbl padding5 "></span>LANDSCAPE<br/>
+       <input type="radio" name="orientation" value="portrait"/> 
+        <span class="lbl padding5 "></span>PORTRAIT
+		 <br/><br/>
+         
+         
+        <strong>USE OPEN STREET MAP AS BACKGROUND</strong> 
+        <input type="checkbox" name="osm" value="osm"/>
+            <span class="lbl float-right"></span>
+            <br/><br/>
+            
+        </div>	<!-- close box260-->
+        
+        <div class="box260 float-left">
+        <strong>INCLUDE LEGEND SETTINGS</strong>
+        <input type="checkbox" name="lgend" value="include-legend"/>
+          <span class="lbl float-right"></span> <br/><br/>
+        
+        <div class="opacity-legend">
+        
+        	<strong>LEGEND ON DISTINCT PAGE</strong>
+        	<input type="checkbox" name="legend-page" value="distinct-page"/>
+            <span class="lbl float-right"></span><br/><br/>
+            
+            <strong>FONT SETTINGS</strong><br/>
+            
+            <label class="label-modal label-width-md float-left">
+    		<select class="form-control" id="scale">
+    		<option>Verdana</option>
+    		<option>Areal</option>
+    		<option>Times New Roman</option>
+			</select>
+        	</label>
+            
+           <label class="label-modal float-left">
+    		<select class="form-control" id="scale">
+    		<option>12 pt</option>
+    		<option>14 pt</option>
+    		<option>16 pt</option>
+            <option>18 pt</option>
+			</select>
+        	</label>             
+           
+    		<button type="button" class="btn-xs btn-primary square-button-sm float-right left15">
+    		<div class="glyphicon glyphicon-italic"></div>
+            </button>
+            
+            <button type="button" class="btn-xs btn-primary square-button-sm float-right">
+    		<div class="glyphicon glyphicon-bold"></div>
+    		</button>
+    		<br/><br/>
+            
+            <strong>FORCE LABEL'S TITLE</strong> 
+        	<input type="checkbox" name="legend-page" value="force-label"/>
+            <span class="lbl  float-right"></span> <br/><br/>
+            
+            <strong>ANTI ALIASING FONT</strong>
+        	<input type="checkbox" name="legend-page" value="aliasing"/>
+            <span class="lbl  float-right"></span><br/><br/>
+            
+         <div class="float-left">   
+            <strong>ICON SIZE</strong>
+            <label class="float-right label-modal">
+    		<select class="form-control" id="scale">
+    		<option>20</option>
+    		<option>18</option>
+    		<option>16</option>
+			</select>
+        	</label><br/><br/>
+         </div>
+         
+         <div class="float-right">     
+            <strong>DPI</strong>
+            <label class="float-right label-modal">
+    		<select class="form-control" id="scale">
+    		<option>96</option>
+    		<option>150</option>
+    		<option>300</option>
+			</select>
+        	</label> 
+         </div>
+         
+        </div><!-- close opacity--><br/>
+        
+        <div class="floatstop"></div>
+        
+        <strong>PREVIEW</strong>
+        <div class="map-container bottom15">
+        <button type="button" class="btn btn-primary square-button float-right">
+    		<div class="glyphicon glyphicon-refresh"></div>
+    	</button>
+        </div>
+        
+        <strong>MAP SCALE</strong>
+            <label class="float-right label-modal">
+    		<select class="form-control" id="scale">
+    		<option>20</option>
+    		<option>18</option>
+    		<option>16</option>
+			</select>
+        	</label><br/><br/>
+            
+         <strong>RESOLUTION</strong>
+            <label class="float-right label-modal label-width-md">
+    		<select class="form-control" id="scale">
+    		<option>300px</option>
+    		<option>150px</option>
+    		<option>96px</option>
+			</select>
+        	</label><br/><br/>
+            
+            <button type="button" class="btn-sm btn-primary float-right">
+    		PRINT PDF
+   		 	</button>
+        
+        
+        
+        
+        </div>	<!-- close box260-->
+        
+        <div class="floatstop"></div>
+        
+	</div><!-- close modal body-->
+    
+    </div><!-- close modal content-->
+
+</div><!-- close modal dialog info panel-->
+		
+     
+
+ 
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>
+
