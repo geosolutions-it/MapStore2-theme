@@ -89,7 +89,7 @@
 .glyphicon-1-measure-area:before {
   content: "\72";
 }
-.glyphicon-1-measure-leght:before {
+.glyphicon-1-measure-lenght:before {
   content: "\73";
 }
 .glyphicon-1-measure-path:before {
@@ -158,7 +158,7 @@
 .glyphicon-align-right:before {
   content: "\4f";
 }
-.glyphicon-arrow-asterisk:before {
+.glyphicon-asterisk:before {
   content: "\50";
 }
 .glyphicon-arrow-down:before {
