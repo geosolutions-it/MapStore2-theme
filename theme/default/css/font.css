@@ -89,19 +89,19 @@
 .glyphicon-1-measure-area:before {
   content: "\72";
 }
-.glyphicon-1-measure-leight:before {
+.glyphicon-1-measure-leght:before {
   content: "\73";
 }
 .glyphicon-1-measure-path:before {
   content: "\74";
 }
-.glyphicon-1-menu:before {
+.glyphicon-menu-hamburger:before {
   content: "\75";
 }
 .glyphicon-1-menu-manage:before {
   content: "\76";
 }
-.glyphicon-1-more-option:before {
+.glyphicon-option-orizontal:before {
   content: "\77";
 }
 .glyphicon-1-pdf:before {
@@ -116,7 +116,7 @@
 .glyphicon-1-position-1:before {
   content: "\41";
 }
-.glyphicon-1-screen-back:before {
+.glyphicon-1-screen-backward:before {
   content: "\42";
 }
 .glyphicon-1-screen-forward:before {
@@ -619,4 +619,9 @@
 }
 .glyphicon-1-max-size:before {
   content: "\71";
+}
+
+/** FIXES FOR BOOTSTRAP ICONS **/
+.glyphicon-option-horizontal:before {
+  content: "\77"
 }
