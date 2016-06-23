@@ -9,11 +9,12 @@
     url("../fonts/mapstore2.svg#mapstore2") format("svg");
   font-weight: normal;
   font-style: normal;
+
 }
 
-[data-glyphicon]:before {
+[data-glyphicon ]:before {
   font-family: "mapstore2" !important;
-  content: attr(data-glyphicon);
+  content: attr(data-glyphicon );
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -85,9 +86,6 @@
 .glyphicon-1-mark-alt:before {
   content: "\70";
 }
-.glyphicon-1-max-size:before {
-  content: "\71";
-}
 .glyphicon-1-measure-area:before {
   content: "\72";
 }
@@ -97,13 +95,13 @@
 .glyphicon-1-measure-path:before {
   content: "\74";
 }
-.glyphicon-1-menu:before {
+.glyphicon-menu-hamburger:before {
   content: "\75";
 }
 .glyphicon-1-menu-manage:before {
   content: "\76";
 }
-.glyphicon-1-more-option:before {
+.glyphicon-option-orizontal:before {
   content: "\77";
 }
 .glyphicon-1-pdf:before {
@@ -117,9 +115,6 @@
 }
 .glyphicon-1-position-1:before {
   content: "\41";
-}
-.glyphicon-1-screen-back:before {
-  content: "\42";
 }
 .glyphicon-1-screen-backward:before {
   content: "\42";
@@ -190,14 +185,8 @@
 .glyphicon-bold:before {
   content: "\58";
 }
-.glyphicon-calendar:before {
-  content: "\59";
-}
 .glyphicon-camera:before {
   content: "\5a";
-}
-.glyphicon-check:before {
-  content: "\30";
 }
 .glyphicon-chevron-down:before {
   content: "\31";
@@ -259,20 +248,8 @@
 .glyphicon-envelope:before {
   content: "\2b";
 }
-.glyphicon-exclamation-sign:before {
-  content: "\2c";
-}
-.glyphicon-expand:before {
-  content: "\2d";
-}
 .glyphicon-export:before {
   content: "\2e";
-}
-.glyphicon-eye-close:before {
-  content: "\2f";
-}
-.glyphicon-eye-open:before {
-  content: "\3a";
 }
 .glyphicon-fast-backward:before {
   content: "\3b";
@@ -366,12 +343,6 @@
 }
 .glyphicon-list:before {
   content: "\e00e";
-}
-.glyphicon-list-alt:before {
-  content: "\e00f";
-}
-.glyphicon-lock:before {
-  content: "\e010";
 }
 .glyphicon-log-in:before {
   content: "\e011";
@@ -497,9 +468,6 @@
 .glyphicon-save:before {
   content: "\e039";
 }
-.glyphicon-saved:before {
-  content: "\e03a";
-}
 .glyphicon-screenshot:before {
   content: "\e03b";
 }
@@ -593,9 +561,6 @@
 .glyphicon-transfer:before {
   content: "\e059";
 }
-.glyphicon-trash:before {
-  content: "\e05a";
-}
 .glyphicon-unchecked:before {
   content: "\e05b";
 }
@@ -620,10 +585,44 @@
 .glyphicon-zoom-out:before {
   content: "\e062";
 }
+.glyphicon-eye-close:before {
+  content: "\2f";
+}
+.glyphicon-eye-open:before {
+  content: "\3a";
+}
+.glyphicon-trash:before {
+  content: "\e05a";
+}
+.glyphicon-saved:before {
+  content: "\e03a";
+}
+.glyphicon-calendar:before {
+  content: "\59";
+}
+.glyphicon-1-catalog:before {
+  content: "\e063";
+}
+.glyphicon-exclamation-sign:before {
+  content: "\2c";
+}
+.glyphicon-expand:before {
+  content: "\e064";
+}
+.glyphicon-lock:before {
+  content: "\2d";
+}
+.glyphicon-list-alt:before {
+  content: "\e00f";
+}
+.glyphicon-check:before {
+  content: "\30";
+}
+.glyphicon-1-max-size:before {
+  content: "\71";
+}
+
 /** FIXES FOR BOOTSTRAP ICONS **/
 .glyphicon-option-horizontal:before {
   content: "\77"
-}
-.glyphicon-menu-hamburger:before {
-  content: "\75";
 }
