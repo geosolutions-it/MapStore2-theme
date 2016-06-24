@@ -16,7 +16,6 @@ html {
 	clear: both;
 }
 
-
 a:hover, a:active, a:link, a:focus  {
 	text-decoration:none
 }
@@ -73,6 +72,10 @@ a:hover, a:active, a:link, a:focus  {
 	padding-right:10px;
 }
 
+.border-grey {
+	border:grey solid 1px;
+}
+
 .shadow{
     -webkit-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
 	-moz-box-shadow: -1px 1px 5px 1px rgba(94,94,94,1);
@@ -85,6 +88,42 @@ a:hover, a:active, a:link, a:focus  {
 	box-shadow: -1px 1px 5px 1px rgba(154,154,154,1);
 }
 
+/* btn with icon */
+.btn-lg .glyphicon{
+	margin-right:5px;
+	margin-top:5px;
+}
+
+.btn-md .glyphicon{
+	margin-right:5px;
+	margin-top:3px;
+}
+
+.btn-sm .glyphicon{
+	margin-right:5px;
+	margin-top:1px;
+	font-size:18px;
+}
+
+.btn-xs .glyphicon{
+	margin-right:5px;
+	font-size:18px;
+}
+
+.btn-primary.active,.btn-primary.focus,.btn-primary:active,.btn-primary:focus,.btn-primary:hover,.open>.dropdown-toggle.btn-primary{
+	color:#fff;background-color:#5C9FB4;border-color:none; /*remove active color */
+}
+
+.no-border{
+	border:none
+}
+
+.no-border:hover, .no-border:active{
+	box-shadow:none;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+}
+
 /*navbar */
 
 .work-button {
@@ -94,9 +133,9 @@ a:hover, a:active, a:link, a:focus  {
 }
 
 .option-icon {
-	font-size: 32px;
+	font-size: 35px;
 	margin-right: 15px;
-	margin-top: -15px;
+	margin-top: -8px;
 	color: #078AA3;
 }
 
@@ -154,10 +193,6 @@ a:hover, a:active, a:link, a:focus  {
 	width:290px;
 }
 
-.btn-primary .glyphicon {
-	font-size:35px;
-}
-
 @media (max-width: 767px) {
 .navbar-dx .open .dropdown-menu { /* formattare dropdown nel piccolo */
    position: fixed;
@@ -213,14 +248,10 @@ a:hover, a:active, a:link, a:focus  {
 	margin-top: 30px;
 }
 
-.col .map-thumb .glyphicon {
-	font-size:20px;
-	margin-top:-7px;
-}
-
 .col-no-margin {
 	margin: 0;
 }
+
 .map-title {
 	height: 2em;
 	padding-left: 10px;
@@ -320,7 +351,7 @@ a:hover, a:active, a:link, a:focus  {
 }
 
 .search-wrap-home .btn-default {
-	background-color: #ffffff; 
+	border:none; 
 }
 
 .text-home{
@@ -354,9 +385,19 @@ a:hover, a:active, a:link, a:focus  {
 	width: 50px;
 }
 
+.square-button-md {
+	height: 30px;
+	width: 30px;
+}
+
 .square-button .glyphicon {
-    margin-left: -5px;
-    margin-top: -8px;
+    margin-left: -6px;
+	font-size: 35px;
+}
+
+.square-button-md .glyphicon {
+    margin-left: -9px;
+	font-size: 23px;
 }
 
 .square-button-sm {
@@ -406,10 +447,6 @@ a:hover, a:active, a:link, a:focus  {
 	height: 50px;
 }
 
-.absolute-info .square-button .icon{
-	margin-left:-3px;
-}
-
 .info-container{
 	height:50px;
 	margin-right:10px;
@@ -437,18 +474,18 @@ a:hover, a:active, a:link, a:focus  {
 }
 
 .label-modal:after {
-    content:'1';
-    font:22px "mapstore2", monospace;
-    color:#078aa3;
-    -webkit-transform:rotate(0deg);
-    -moz-transform:rotate(0deg);
-    -ms-transform:rotate(0deg);
-    transform:rotate(0deg);
-    right:0px; 
-	top:-8px;
-    padding:0 0 2px;
-    position:absolute;
-    pointer-events:none;
+    content: '1';
+    font: 23px "mapstore2", monospace;
+    color: #078aa3;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    right: 2px;
+    top: 2px;
+    padding: 0 0 2px;
+    position: absolute;
+    pointer-events: none;
 }	
 
 .label-modal:before {
@@ -483,14 +520,14 @@ a:hover, a:active, a:link, a:focus  {
 
 .label-scale:after {
     content:'1';
-    font:22px "mapstore2", monospace;
+    font:23px "mapstore2", monospace;
     color:#078aa3;
     -webkit-transform:rotate(0deg);
     -moz-transform:rotate(0deg);
     -ms-transform:rotate(0deg);
     transform:rotate(0deg);
-    right:4px; 
-	top:-8px;
+    right:2px; 
+	top:2px;
     padding:0 0 2px;
     position:absolute;
     pointer-events:none;
@@ -512,6 +549,7 @@ a:hover, a:active, a:link, a:focus  {
 	overflow: hidden;
 	background-color: #5C9FB4;
 }
+
 .divider-horiz {
 	width: 1px;
 	height: 50px;
@@ -542,16 +580,14 @@ navbar-dx .search-wrap {
 /* scale dx-bottom menu */
 
 .scale {
-	width: 120px;
 	height: 50px
 }
+
 .scale .line {
 	background-color:#ffffff;
 	height:25px;
 }
-.scale .choose-scale {
-	/* background-color: pink; */
-}
+
 /* working tool */
 .sidebar {
 	background-color: #FFFFFF;
@@ -561,7 +597,7 @@ navbar-dx .search-wrap {
 }
 
 .sidebar .btn-default {
-  background-color: #ffffff;
+	border:none;
 }
 
 .sidebar ul {
@@ -599,6 +635,7 @@ navbar-dx .search-wrap {
 	padding: 15px;
 	margin: 0px;
 	width: 290px;
+	height:50px;
 }
 
 .sidebar .working .list-group .list-group-item ul {
@@ -613,38 +650,35 @@ navbar-dx .search-wrap {
 
 .working-eye {
 	position: absolute;
-	font-size:23px;
-	top: 20px;
+	top: 10px;
 	left: 43px;
 }
 
 .layer-name {
 	position: absolute;
 	top: 15px;
-	margin-left: 60px;
+	margin-left: 63px;
 }
 
 .working-option {
 	position: absolute;
-	top: 20px;
-	font-size: 22px;
+	top: 10px;
 	right: 35px;
 	margin-top:2px;
 }
 
 .working-adjust{
 	position: absolute;
-	top: 20px;
-	font-size: 22px;
-	right: 10px;
+	top: 10px;
+	right: 5px;
 	margin-top:2px;
 }
 
 .working-folder {
 	position: absolute;
-	top: 20px;
-	font-size: 23px;
+	top: 10px;
 }
+
 .map-container {
 	height: 100px;
 	width: 260px;
@@ -680,7 +714,7 @@ navbar-dx .search-wrap {
 
 /* Panel OPTIONS modal body  */
 .modal-header .close {
-  margin-top: -12px;
+  margin-top: -6px;
 }
 
 .modal-body ul {
@@ -739,7 +773,6 @@ navbar-dx .search-wrap {
 }
 
 .modal-body .btn-default {
-	background-color: #ffffff;
 }
 
 .modal-print {
@@ -1062,7 +1095,7 @@ input[type=radio]:checked+.lbl::before {
 }
 
 .navbar-dx .search-wrap .btn-default {
-  background-color: #ffffff;
+	border:none;
 }
 
 .navbar-dx  .dropdown-menu {
