@@ -5201,9 +5201,6 @@ button.close {
     margin: auto;
 	margin-top: 150px;
   }
-  .modal-content {
-	width:290px;
-  }
   .modal-sm {
     width: 300px;
   }
