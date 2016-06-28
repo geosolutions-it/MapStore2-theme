@@ -46,7 +46,24 @@
 	height: 50px;
 	width: 50px;
 }
+.nav-menu {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 
+.nav-content {
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.nav-body {
+    position:absolute;
+    top:50px;
+    bottom: 0;
+    overflow: auto;
+}
 /* button dividers */
 #mapstore-burger-menu {
   border-right: 1px solid #5C9FB4;
