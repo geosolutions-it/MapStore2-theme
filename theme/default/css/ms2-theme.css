@@ -213,7 +213,6 @@ div#mapstore-globalspinner {
 }
 /* NAV BUTTONS */
 #mapstore-drawermenu .navButtons .btn.square-button{
-	border-left: 1px solid #dddddd;
 	font-size: 35px;
 }
 #mapstore-drawermenu .navButtons .btn.square-button .glyphicon{
@@ -294,4 +293,16 @@ div#mapstore-globalspinner {
 #measure-result-panel .glyphicon {
     margin-left: 0;
     margin-top: 0;
+}
+
+/* Various */
+.no-border{
+    border:none
+}
+
+.no-border:hover, .no-border:active, .no-border:active:focus, .no-border:focus{
+    box-shadow:none;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    outline: none;
 }
