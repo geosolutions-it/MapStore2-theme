@@ -324,3 +324,7 @@ div#mapstore-globalspinner {
     -moz-box-shadow:none;
     outline: none;
 }
+
+#mapstore-getfeatureinfo .panel-body {
+    padding: 0;
+}
