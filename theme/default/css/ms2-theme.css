@@ -66,10 +66,10 @@
     width: 100%;
 }
 /* button dividers */
-#mapstore-burger-menu {
-  border-right: 1px solid #5C9FB4;
+#mapstore-navbar-container .dropdown-toggle, #mapstore-navbar-container .square-button {
   border-left: 1px solid #5C9FB4;
 }
+
 /* -------*/
 /* Search */
 /* -------*/
