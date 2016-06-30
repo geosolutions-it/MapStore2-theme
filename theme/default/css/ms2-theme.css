@@ -246,16 +246,17 @@ div#mapstore-globalspinner {
 
 /* VISIBILITY CHECK */
 #mapstore-drawermenu #mapstore-layers .glyphicon, #mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon{
-    font-size: 23px;
+    font-size: 30px;
 		z-index: 2;
 }
 #mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon{
 	 float: left;
-	 font-size: 23px;
+	 font-size: 30px;
 	 margin-top: 0px;
 }
 #mapstore-drawermenu #mapstore-layers .toc-default-layer .visibility-check.glyphicon {
-	font-size: 23px;
+	font-size: 30px;
+	margin-top: -5px;
 }
 #mapstore-drawermenu #mapstore-layers .visibility-check.glyphicon.visibility-check.checked {
 		color: #078aa3;
