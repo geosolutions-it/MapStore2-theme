@@ -77,11 +77,11 @@
 	width: 500px;
 }
 /* remove default inbox bootstrap shadow on focus for the input */
-#mapstore-navbar .navbar-dx .MapSearchBar .form-control:focus {
+div.MapSearchBar .form-control:focus {
   box-shadow: none;
 }
 
-#mapstore-navbar .navbar-dx .MapSearchBar .input-group-addon{
+div.MapSearchBar .input-group-addon{
     height: 50px;
     width: 50px;
     color: #078aa3;
