@@ -274,6 +274,7 @@ div#mapstore-globalspinner {
 #mapstore-drawermenu #mapstore-layers .toc-default-layer .glyphicon {
 	font-size: 23px;
 	margin-top: -2px;
+	color: #078aa3;
 }
 #mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon-folder-open,#mapstore-drawermenu #mapstore-layers .toc-group-title .glyphicon-folder-close {
 	color: #078aa3;
