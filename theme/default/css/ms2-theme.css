@@ -302,12 +302,16 @@ div#mapstore-globalspinner {
 /* MEASURE PANEL */
 #measure-result-panel .option-text {
     font-size: 14px;
-    color: black;
     text-transform: uppercase;
+    vertical-align: middle;
 }
-#measure-result-panel .btn-default {
-    background-color: white;
+
+#measure-result-panel .option-icon {
+    font-size: 32px;
+    text-transform: uppercase;
+    vertical-align: middle;
 }
+
 #measure-result-panel .glyphicon {
     margin-left: 0;
     margin-top: 0;
