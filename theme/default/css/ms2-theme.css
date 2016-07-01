@@ -334,3 +334,42 @@ div#mapstore-globalspinner {
 #mapstore-getfeatureinfo .panel-body {
     padding: 0;
 }
+
+/* Leaflet minimap style */
+
+.leaflet-control-minimap {
+    border:solid rgba(7,138,163, 1.0) 4px !important;
+}
+.leaflet-control-minimap a {
+    background-color: rgba(7,138,163, 1.0) !important;
+}
+.leaflet-control-minimap-toggle-display{
+    background-image: url("../img/toggle.svg") !important;
+}
+
+.leaflet-oldie .leaflet-control-minimap-toggle-display{
+    background-image: url("../img/toggle.png") !important;
+}
+
+/* OpenLayers minimap style */
+
+.ol-custom-overviewmap button {
+    background-color: rgba(7,138,163,1) !important;
+}
+
+.ol-custom-overviewmap button:hover, .ol-custom-overviewmap .ol-control button:focus {
+    background-color: rgba(7,138,163,0.7) !important;
+}
+
+.ol-custom-overviewmap:not(.ol-collapsed) {
+    background: rgba(7,138,163,1) !important;
+    border-radius: 3px !important;
+}
+
+.ol-custom-overviewmap .ol-overviewmap-map {
+    height: 133px !important;
+}
+
+.ol-custom-overviewmap {
+    margin-bottom: 3px;
+}
