@@ -373,3 +373,11 @@ div#mapstore-globalspinner {
 .ol-custom-overviewmap {
     margin-bottom: 3px;
 }
+
+.btn-success{
+    background-color: #398439 !important;
+}
+
+.btn-success:hover{
+    background-color: #449d44 !important;
+}
