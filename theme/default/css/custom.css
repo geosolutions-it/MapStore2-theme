@@ -68,8 +68,20 @@ a:hover, a:active, a:link, a:focus  {
 	padding:0;
 }
 
+.margin10 {
+	margin:10px;
+}
+
+.margin10-top {
+	margin-top:10px;
+}
+
 .padding10-right {
 	padding-right:10px;
+}
+
+.margin15 {
+	margin:15px;
 }
 
 .border-grey {
@@ -220,6 +232,16 @@ a:hover, a:active, a:link, a:focus  {
 	background-position: center;
 }
 
+.mapstore-header-manage {
+	height: 200px;
+	width: 100%;
+	background-image:url(../../../samples/map/img/manage-img.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	background-position: center;
+}
+
 .navbar-home{
 	z-index:1000;
 }
@@ -261,14 +283,12 @@ a:hover, a:active, a:link, a:focus  {
 .map-thumb {
 	height: 180px;
 	max-width: 100%;
-	background: url(../../../samples/map/img/background-map.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
 	overflow: hidden;
 	transition: all 0.3s ease-in;
     -webkit-transition:all 0.3s ease-in;
     -moz-transition:all 0.3s ease-in;
     -o-transition:all 0.3s ease-in;
+	font-size:12px;
 }
 
 .map-thumb-001 { 
@@ -367,11 +387,6 @@ a:hover, a:active, a:link, a:focus  {
 	right:15px;
 }
 
-.map-editing-button {
-	float: left;
-	height: 30px;
-	width: 30px;
-}
 /*end  home/welcome page */
 
 .absolute-map {
@@ -391,7 +406,7 @@ a:hover, a:active, a:link, a:focus  {
 }
 
 .square-button .glyphicon {
-    margin-left: -6px;
+    margin-left: -5px;
 	font-size: 35px;
 }
 
@@ -553,6 +568,13 @@ a:hover, a:active, a:link, a:focus  {
 .divider-horiz {
 	width: 1px;
 	height: 50px;
+	overflow: hidden;
+	background-color: #5C9FB4 /* azzurro chiaro */ !important;
+}
+
+.divider-horiz-md {
+	width: 1px;
+	height: 30px;
 	overflow: hidden;
 	background-color: #5C9FB4 /* azzurro chiaro */ !important;
 }
@@ -1051,6 +1073,37 @@ input[type=radio]:checked+.lbl::before {
         content: "\e01a";
 }	
 
+/* --------------manager pages----------------------- */
+.navbar-dx {
+	width:320px;
+}
+
+.status{
+	position:absolute;
+	top:130px;
+	left:25px;
+}
+
+.status .glyphicon{
+	font-size:32px;
+}
+
+.green{
+	color:#4E8C75;
+}
+
+.red{
+	color:#A23F37;
+}
+
+.wrap-user-btn{
+	height:50px;
+}
+	
+.groups-area {
+	width: 260px;
+	height: 100px;
+}
 
 @media (min-width: 768px) {
 	
@@ -1082,10 +1135,6 @@ input[type=radio]:checked+.lbl::before {
 	background-image:url(../../../samples/map/img/mapstore2_logo.png);
 	background-repeat:no-repeat;
 	background-size:contain;
-}
-	 
-.navbar-dx {
-	width:402px;
 }
 
 .navbar-dx .search-wrap {
