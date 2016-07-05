@@ -178,20 +178,20 @@ div.MapSearchBar .input-group-addon{
 /*--------- */
 /* Dropdown */
 /* -------- */
-.navbar-dx .dropdown-menu .dropdown-header {
+.navbar-dx .dropdown-menu .dropdown-header, .navbar-home .dropdown-menu .dropdown-header {
     background-color: #078AA3;
 
 }
-.navbar-dx .dropdown-menu {
+.navbar-dx .dropdown-menu, .navbar-home .dropdown-menu  {
   text-transform: uppercase;
 }
-.navbar-dx .dropdown-menu li {
+.navbar-dx .dropdown-menu li, .navbar-home .dropdown-menu  li {
   border-bottom: 1px solid #eeeeee;
 }
-.navbar-dx .dropdown-menu li a{
+.navbar-dx .dropdown-menu li a, .navbar-home .dropdown-menu li a{
   max-height: 50px;
 }
-.navbar-dx .dropdown-menu li a span{
+.navbar-dx .dropdown-menu li a span, .navbar-home .dropdown-menu li a span{
   position: relative;
 }
 /**********************************************/
