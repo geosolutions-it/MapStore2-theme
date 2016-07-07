@@ -360,6 +360,41 @@ a:hover, a:active, a:link, a:focus  {
 	background-size: cover;
 }
 
+.map-thumb-manager { 
+	background: url(../../../samples/map/img/img-index/manager.jpg);
+	background-size: cover;
+}
+
+.map-thumb-add-1 { 
+	background: url(../../../samples/map/img/img-index/add-1.jpg);
+	background-size: cover;
+}
+
+.map-thumb-add-2 { 
+	background: url(../../../samples/map/img/img-index/add-2.jpg);
+	background-size: cover;
+}
+
+.map-thumb-add-3 { 
+	background: url(../../../samples/map/img/img-index/add-3.jpg);
+	background-size: cover;
+}
+
+.map-thumb-buttons { 
+	background: url(../../../samples/map/img/img-index/buttons.jpg);
+	background-size: cover;
+}
+
+.map-thumb-print { 
+	background: url(../../../samples/map/img/img-index/print.jpg);
+	background-size: cover;
+}
+
+.map-thumb-catalog { 
+	background: url(../../../samples/map/img/img-index/catalog.jpg);
+	background-size: cover;
+}
+
 .search-wrap-home .search-wrap { 
 	width: 90%;
 	margin-left: auto;
@@ -705,7 +740,7 @@ navbar-dx .search-wrap {
 	height: 100px;
 	width: 260px;
 	background-color: pink;
-	margin-top: 15px;
+	margin-top: 5px;
 }
 
 .sidebar .working .draw-button button {
@@ -1071,7 +1106,7 @@ input[type=radio]+.lbl::before {
 
 input[type=radio]:checked+.lbl::before {
         content: "\e01a";
-}	
+}			
 
 /* --------------manager pages----------------------- */
 .navbar-dx {
