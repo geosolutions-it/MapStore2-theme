@@ -381,3 +381,28 @@ div#mapstore-globalspinner {
 .btn-success:hover{
     background-color: #449d44 !important;
 }
+
+div.ol-scale-line.ol-unselectable{
+		border: 2px solid #000;
+		border-top: none;
+		line-height: 1.0;
+		border-radius: 0px;
+		bottom: 5px;
+		left: auto;
+		right: 57px;
+		padding: 2px 5px 1px;
+		white-space: nowrap;
+		overflow: hidden;
+		-moz-box-sizing: content-box;
+		box-sizing: content-box;
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+div.ol-scale-line-inner{
+	  border: 0px;
+    border-top: 0;
+    color: #white;
+    font-size: 11px;
+    text-align: left;
+    margin: 0px;
+}
