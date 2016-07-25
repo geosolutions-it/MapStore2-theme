@@ -12,9 +12,9 @@
 
 }
 
-[data-glyphicon ]:before {
+[data-icon]:before {
   font-family: "mapstore2" !important;
-  content: attr(data-glyphicon );
+  content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
@@ -56,9 +56,6 @@
 .glyphicon-1-drag:before {
   content: "\66";
 }
-.glyphicon-1-full-screen:before {
-  content: "\67";
-}
 .glyphicon-1-group:before {
   content: "\68";
 }
@@ -89,7 +86,7 @@
 .glyphicon-1-measure-area:before {
   content: "\72";
 }
-.glyphicon-1-measure-lenght:before {
+.glyphicon-1-measure-leight:before {
   content: "\73";
 }
 .glyphicon-1-measure-path:before {
@@ -101,7 +98,7 @@
 .glyphicon-1-menu-manage:before {
   content: "\76";
 }
-.glyphicon-option-orizontal:before {
+.glyphicon-option-horizontal:before {
   content: "\77";
 }
 .glyphicon-1-pdf:before {
@@ -143,9 +140,6 @@
 .glyphicon-1-user-mod:before {
   content: "\4a";
 }
-.glyphicon-adjust:before {
-  content: "\4b";
-}
 .glyphicon-align-center:before {
   content: "\4c";
 }
@@ -158,7 +152,7 @@
 .glyphicon-align-right:before {
   content: "\4f";
 }
-.glyphicon-asterisk:before {
+.glyphicon-arrow-asterisk:before {
   content: "\50";
 }
 .glyphicon-arrow-down:before {
@@ -269,9 +263,6 @@
 .glyphicon-flash:before {
   content: "\40";
 }
-.glyphicon-floppy-disk:before {
-  content: "\5b";
-}
 .glyphicon-floppy-open:before {
   content: "\5d";
 }
@@ -283,12 +274,6 @@
 }
 .glyphicon-floppy-saved:before {
   content: "\60";
-}
-.glyphicon-folder-close:before {
-  content: "\7b";
-}
-.glyphicon-folder-open:before {
-  content: "\7c";
 }
 .glyphicon-font:before {
   content: "\7d";
@@ -302,7 +287,7 @@
 .glyphicon-globe:before {
   content: "\e000";
 }
-.glyphicon-hand-down:before {
+.glyph{
   content: "\e001";
 }
 .glyphicon-hand-left:before {
@@ -435,8 +420,7 @@
   content: "\e02e";
 }
 .glyphicon-remove:before {
-  content: "\64";
-  // content: "\e02f";
+  content: "\e02f";
 }
 .glyphicon-remove-circle:before {
   content: "\e030";
@@ -537,12 +521,6 @@
 .glyphicon-text-width:before {
   content: "\e051";
 }
-.glyphicon-th:before {
-  content: "\e052";
-}
-.glyphicon-th-large:before {
-  content: "\e053";
-}
 .glyphicon-th-list:before {
   content: "\e054";
 }
@@ -585,20 +563,11 @@
 .glyphicon-zoom-out:before {
   content: "\e062";
 }
-.glyphicon-eye-close:before {
-  content: "\2f";
-}
-.glyphicon-eye-open:before {
-  content: "\3a";
-}
 .glyphicon-trash:before {
   content: "\e05a";
 }
 .glyphicon-saved:before {
   content: "\e03a";
-}
-.glyphicon-calendar:before {
-  content: "\59";
 }
 .glyphicon-1-catalog:before {
   content: "\e063";
@@ -618,11 +587,75 @@
 .glyphicon-check:before {
   content: "\30";
 }
+.glyphicon-floppy-disk:before {
+  content: "\5b";
+}
+.glyphicon-1-full-screen:before {
+  content: "\67";
+}
 .glyphicon-1-max-size:before {
   content: "\71";
 }
-
-/** FIXES FOR BOOTSTRAP ICONS **/
-.glyphicon-option-horizontal:before {
-  content: "\77"
+.glyphicon-adjust:before {
+  content: "\4b";
+}
+.glyphicon-calendar:before {
+  content: "\59";
+}
+.glyphicon-folder-close:before {
+  content: "\7b";
+}
+.glyphicon-folder-open:before {
+  content: "\7c";
+}
+.glyphicon-text-colour:before {
+  content: "\e065";
+}
+.glyphicon-text-background:before {
+  content: "\e066";
+}
+.glyphicon-scissors:before {
+  content: "\e067";
+}
+.glyphicon-paste:before {
+  content: "\e068";
+}
+.glyphicon-level-up:before {
+  content: "\e069";
+}
+.glyphicon-hourglass:before {
+  content: "\e06a";
+}
+.glyphicon-duplicate:before {
+  content: "\e06b";
+}
+.glyphicon-copy:before {
+  content: "\e06c";
+}
+.glyphicon-compressed:before {
+  content: "\e06d";
+}
+.glyphicon-bookmark:before {
+  content: "\e06e";
+}
+.glyphicon-book:before {
+  content: "\e06f";
+}
+.glyphicon-alert:before {
+  content: "\e070";
+}
+.glyphicon-fullscreen-2:before {
+  content: "\e052";
+}
+.glyphicon-th:before {
+  content: "\e071";
+}
+.glyphicon-th-large:before {
+  content: "\e053";
+}
+.glyphicon-eye-open:before {
+  content: "\3a";
+}
+.glyphicon-eye-close:before {
+  content: "\2f";
 }
