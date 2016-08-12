@@ -101,24 +101,30 @@ a:hover, a:active, a:link, a:focus  {
 }
 
 /* btn with icon */
+.btn .glyphicon{
+	margin-right:6px;
+	margin-top:0px;
+	font-size:20px;
+}
+
 .btn-lg .glyphicon{
-	margin-right:5px;
-	margin-top:5px;
+	margin-top:2px;
+	font-size:28px;
 }
 
 .btn-md .glyphicon{
-	margin-right:5px;
-	margin-top:3px;
+	margin-top:2px;
+	font-size:26px;
 }
 
 .btn-sm .glyphicon{
-	margin-right:5px;
 	margin-top:1px;
 	font-size:18px;
 }
 
 .btn-xs .glyphicon{
 	margin-right:5px;
+	margin-top:-1px;
 	font-size:18px;
 }
 
@@ -442,12 +448,14 @@ a:hover, a:active, a:link, a:focus  {
 }
 
 .square-button .glyphicon {
-    margin-left: -5px;
+    margin-left: -6px;
+	margin-top:3px;
 	font-size: 35px;
 }
 
 .square-button-md .glyphicon {
     margin-left: -9px;
+	margin-top:-2px;
 	font-size: 23px;
 }
 
@@ -1121,6 +1129,10 @@ input[type=radio]:checked+.lbl::before {
 
 .status .glyphicon{
 	font-size:32px;
+}
+
+.check{
+	font-size:30px;
 }
 
 .green{
