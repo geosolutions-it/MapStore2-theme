@@ -2004,8 +2004,8 @@ select[multiple].input-lg {
   cursor: pointer;
   background-image: none;
   white-space: nowrap;
-  padding: 0 12px;
-  font-size: 28px;
+  padding: 6px 12px;
+  font-size: 16px;
   line-height: 1.428571429;
   border-radius: 0;
   -webkit-user-select: none;
@@ -2051,7 +2051,6 @@ fieldset[disabled] .btn {
 
 .btn-default {
   color: #078aa3;
-  font-size:28px;
   background-color:#ffffff;
   border:#078aa3 1px solid;
 }
@@ -2094,7 +2093,6 @@ fieldset[disabled] .btn-default.active {
   color: #ffffff;
   background-color: #078aa3;
   border:none;
-  font-size: 28px;
 }
 
 .btn-primary:hover {
@@ -2334,12 +2332,13 @@ fieldset[disabled] .btn-link:focus {
 .btn-group-lg > .btn {
   line-height: 1.33;
   border-radius: 0;
+  font-size:24px;
 }
 
 .btn-md,
 .btn-group-md > .btn {
-  padding: 5px 5px;
-  font-size: 22px;
+  padding: 6px 12px;
+  font-size: 20px;
   line-height: 1.33;
 
 }
