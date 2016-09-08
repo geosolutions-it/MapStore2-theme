@@ -490,8 +490,7 @@ div.ol-scale-line-inner{
     color: red !important;
 }
 
-
 .dropzone-errorBox{
-	margin-top: 10px;
+	margin-bottom: 10px;
 	padding: 15px;
 }
