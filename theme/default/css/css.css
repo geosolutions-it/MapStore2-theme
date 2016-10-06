@@ -2405,6 +2405,32 @@ input[type="button"].btn-block {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* btn with icon */
+.btn .glyphicon{
+    float: left;
+	margin-top:0px;
+	font-size:20px;
+}
+
+.btn-lg .glyphicon{
+	font-size:28px;
+}
+
+.btn-md .glyphicon{
+	margin-top:2px;
+	font-size:26px;
+}
+
+.btn-sm .glyphicon{
+	margin-top:1px;
+	font-size:18px;
+}
+
+.btn-xs .glyphicon{
+	font-size:18px;
+}
+
 .glyphicon-asterisk:before {
   content: "\2a";
 }
@@ -3149,7 +3175,9 @@ input[type="button"].btn-block {
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  width:50px;
+}
+.btn-group-vertical {
+     width:50px;
 }
 .btn-group > .btn,
 .btn-group-vertical > .btn {
