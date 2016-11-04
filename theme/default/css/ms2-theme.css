@@ -512,8 +512,6 @@ div.ol-scale-line-inner{
 
 .modal-body {
     background-color: white;
-    max-height: calc(100vh - 190px);
-    overflow-y: auto;
 }
 
 .react-draggable .draggable-header {
