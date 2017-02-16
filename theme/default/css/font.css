@@ -50,6 +50,9 @@
 .glyphicon-1-close:before {
   content: "\64";
 }
+.glyphicon-close:before {
+  content: "\64";
+}
 .glyphicon-1-compass:before {
   content: "\65";
 }
